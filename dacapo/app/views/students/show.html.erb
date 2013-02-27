@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @student.nombre %>
+</p>
+
+<p>
+  <b>Appat:</b>
+  <%= @student.appat %>
+</p>
+
+<p>
+  <b>Apmat:</b>
+  <%= @student.apmat %>
+</p>
+
+<p>
+  <b>Direccio:</b>
+  <%= @student.direccio %>
+</p>
+
+<p>
+  <b>Telefono1:</b>
+  <%= @student.telefono1 %>
+</p>
+
+<p>
+  <b>Telefono2:</b>
+  <%= @student.telefono2 %>
+</p>
+
+<p>
+  <b>Telefono3:</b>
+  <%= @student.telefono3 %>
+</p>
+
+<p>
+  <b>Fecha nac:</b>
+  <%= @student.fecha_nac %>
+</p>
+
+<p>
+  <b>Estatus:</b>
+  <%= @student.estatus %>
+</p>
+
+<p>
+  <b>Tipo pago:</b>
+  <%= @student.tipo_pago %>
+</p>
+
+<p>
+  <b>Tipo clase:</b>
+  <%= @student.tipo_clase %>
+</p>
+
+<p>
+  <b>Rfc fis:</b>
+  <%= @student.rfc_fis %>
+</p>
+
+<p>
+  <b>Tel fis:</b>
+  <%= @student.tel_fis %>
+</p>
+
+<p>
+  <b>Instrumento:</b>
+  <%= @student.instrumento %>
+</p>
+
+<p>
+  <b>Comentario:</b>
+  <%= @student.comentario %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @student.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
