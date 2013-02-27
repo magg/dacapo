@@ -1,9 +1,13 @@
 Dacapo::Application.routes.draw do
-  resources :students
+  
+scope '(:locale)' do
+  
+    resources :students
 
 
-  resources :users
+    resources :users
 
+end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
