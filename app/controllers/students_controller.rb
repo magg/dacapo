@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @usuario = User.new
     @student = Student.find(params[:id])
 
     respond_to do |format|
@@ -24,8 +25,10 @@ class StudentsController < ApplicationController
   # GET /students/new
   # GET /students/new.json
   def new
+    @user = User.new
     @student = Student.new
-
+    @student.user = @user
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @student }
@@ -35,12 +38,15 @@ class StudentsController < ApplicationController
   # GET /students/1/edit
   def edit
     @student = Student.find(params[:id])
+    @user = @student.user
   end
 
   # POST /students
   # POST /students.json
   def create
+    @user = User.new(params[:student][:user_attributes])
     @student = Student.new(params[:student])
+    @student.user = @user
 
     respond_to do |format|
       if @student.save
