@@ -28,3 +28,103 @@ Migrating to CreateStudents (20130227193814)
   [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130227193814')[0m
   [1m[35m (1.5ms)[0m  commit transaction
   [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/students" for 127.0.0.1 at 2013-02-27 15:19:03 -0600
+Connecting to database specified by database.yml
+
+ArgumentError (No association found for name `usuario'. Has it been defined yet?):
+  app/models/student.rb:7:in `<class:Student>'
+  app/models/student.rb:1:in `<top (required)>'
+  app/controllers/students_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/magg/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/magg/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+  Rendered /Users/magg/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students" [0m
+  Rendered students/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 88ms (Views: 61.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /students.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /students.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:41 -0600
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Processing by StudentsController#new as HTML
+  Rendered students/_form.html.erb (54.4ms)
+  Rendered students/new.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 89ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /students.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /students.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-27 15:19:44 -0600
+Served asset /application.js - 304 Not Modified (0ms)
