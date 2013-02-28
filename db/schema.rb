@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228004413) do
+ActiveRecord::Schema.define(:version => 20130228005418) do
 
   create_table "payments", :force => true do |t|
     t.string   "descripcion"
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(:version => 20130228004413) do
     t.string   "nombre"
     t.string   "appat"
     t.string   "apmat"
-    t.string   "direccio"
+    t.string   "direccion"
     t.string   "telefono1"
     t.string   "telefono2"
     t.string   "telefono3"
     t.date     "fecha_nac"
     t.integer  "estatus"
-    t.integer  "tipo_pago"
+    t.integer  "payment_id"
     t.integer  "tipo_clase"
     t.string   "rfc_fis"
     t.string   "tel_fis"
