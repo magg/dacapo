@@ -69,7 +69,7 @@ es:
       user:      "usuario"
       payment:  "pago"
       period:   "período"
-      mayor:   "carrera"
+      major:   "carrera"
       group:   "grupo"
     attributes:
       student:

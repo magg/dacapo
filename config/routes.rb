@@ -6,8 +6,9 @@ scope '(:locale)' do
     resources :payments
     resources :users
     resources :subjects
-    resources :mayors
+    resources :majors
     resources :groups
+    resources :shifts
     
 end
 

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Clave:</b>
+  <%= @major.clave %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @major.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_major_path(@major) %> |
+<%= link_to 'Back', majors_path %>
