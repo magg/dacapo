@@ -1,15 +1,14 @@
 Dacapo::Application.routes.draw do
 
 scope '(:locale)' do
-  
     resources :students
     resources :periods
     resources :payments
     resources :users
     resources :subjects
     resources :mayors
+    resources :groups
     
-
 end
 
   # The priority is based upon order of creation:

@@ -69,6 +69,8 @@ es:
       user:      "usuario"
       payment:  "pago"
       period:   "período"
+      mayor:   "carrera"
+      group:   "grupo"
     attributes:
       student:
           appat: "Apellido paterno"
