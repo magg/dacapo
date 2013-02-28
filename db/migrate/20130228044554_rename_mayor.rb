@@ -1,6 +1,6 @@
 class RenameMayor < ActiveRecord::Migration
   def up
-        rename_table :mayor, :major
+        rename_table :mayors, :majors
   end
 
   def down
