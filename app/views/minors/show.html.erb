@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Clave:</b>
+  <%= @minor.clave %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @minor.descripcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_minor_path(@minor) %> |
+<%= link_to 'Back', minors_path %>

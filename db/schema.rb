@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228044554) do
+ActiveRecord::Schema.define(:version => 20130228050503) do
 
   create_table "groups", :force => true do |t|
     t.string   "clave"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20130228044554) do
   end
 
   create_table "majors", :force => true do |t|
+    t.string   "clave"
+    t.string   "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "minors", :force => true do |t|
     t.string   "clave"
     t.string   "descripcion"
     t.datetime "created_at",  :null => false

@@ -9,7 +9,7 @@ scope '(:locale)' do
     resources :majors
     resources :groups
     resources :shifts
-    
+    resources :minors
 end
 
   # The priority is based upon order of creation:
