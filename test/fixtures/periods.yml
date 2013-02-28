@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  clave: MyString
+  fecha_inicio: 2013-02-27
+  fecha_fin: 2013-02-27
+  descripcion: MyString
+
+two:
+  clave: MyString
+  fecha_inicio: 2013-02-27
+  fecha_fin: 2013-02-27
+  descripcion: MyString

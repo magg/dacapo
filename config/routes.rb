@@ -1,5 +1,11 @@
 Dacapo::Application.routes.draw do
   
+  resources :periods
+
+
+  resources :payments
+
+
 scope '(:locale)' do
   
     resources :students

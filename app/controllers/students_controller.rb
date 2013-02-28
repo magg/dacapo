@@ -65,7 +65,8 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     respond_to do |format|
-      if @student.update_attributes(params[:student])
+      if @student.update_attributes(params[:student]) and
+        @student.user.update_attributes(params[:student][:user_attributes])
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { head :no_content }
       else
@@ -77,9 +78,12 @@ class StudentsController < ApplicationController
 
   # DELETE /students/1
   # DELETE /students/1.json
-  def destroy
+  def destroy  
     @student = Student.find(params[:id])
-    @student.destroy
+    id = @student.user_id
+    @user = User.find(id)
+    @user.destroy
+    
 
     respond_to do |format|
       format.html { redirect_to students_url }
