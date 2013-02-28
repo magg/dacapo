@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228005418) do
+ActiveRecord::Schema.define(:version => 20130228032454) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "clave"
+    t.string   "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "mayors", :force => true do |t|
+    t.string   "clave"
+    t.string   "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "payments", :force => true do |t|
     t.string   "descripcion"
@@ -26,6 +40,11 @@ ActiveRecord::Schema.define(:version => 20130228005418) do
     t.string   "descripcion"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "periods_subjects", :id => false, :force => true do |t|
+    t.integer "period_id"
+    t.integer "subject_id"
   end
 
   create_table "students", :force => true do |t|
@@ -45,6 +64,14 @@ ActiveRecord::Schema.define(:version => 20130228005418) do
     t.string   "instrumento"
     t.string   "comentario"
     t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.string   "clave"
+    t.string   "descripcion"
+    t.string   "matreq"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

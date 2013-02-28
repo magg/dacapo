@@ -20,3 +20,5 @@
 *.log
 
 log/development.log
+
+*.sqlite3
