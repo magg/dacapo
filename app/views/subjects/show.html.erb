@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Clave:</b>
+  <%= @subject.clave %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @subject.descripcion %>
+</p>
+
+<p>
+  <b>Matreq:</b>
+  <%= @subject.matreq %>
+</p>
+
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>

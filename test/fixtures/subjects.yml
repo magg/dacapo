@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  clave: MyString
+  descripcion: MyString
+  matreq: MyString
+
+two:
+  clave: MyString
+  descripcion: MyString
+  matreq: MyString
