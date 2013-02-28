@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  period_id: 1
+  subject_id: 1
+  group_id: 1
+  shift_id: 1
+  student_id: 1
+  horario: MyString
+  lim_faltas: 1
+  sesiones: 1
+  cupo: 1
+
+two:
+  period_id: 1
+  subject_id: 1
+  group_id: 1
+  shift_id: 1
+  student_id: 1
+  horario: MyString
+  lim_faltas: 1
+  sesiones: 1
+  cupo: 1
