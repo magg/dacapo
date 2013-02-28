@@ -67,6 +67,8 @@ es:
     models:
       student:     "estudiante"
       user:      "usuario"
+      payment:  "pago"
+      period:   "período"
     attributes:
       student:
           appat: "Apellido paterno"
@@ -76,6 +78,9 @@ es:
           password: "Password"
           username: "Usuario"
           password_confirmation: "Confirmación de password"
+      period:
+          fecha_fin: "Fecha Fin"
+          fecha_inicio: "Fecha Inicio"
 #END:errors
 #END:model
 #START:errors
