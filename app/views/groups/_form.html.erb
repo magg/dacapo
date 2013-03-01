@@ -19,6 +19,10 @@
     <%= f.label :descripcion %><br />
     <%= f.text_field :descripcion %>
   </div>
+ <div class="field">
+    <%= f.label :estatus %><br />
+    <%= f.check_box :estatus, {}, 0, 1 %> Bloqueado
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

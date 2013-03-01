@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301185403) do
+ActiveRecord::Schema.define(:version => 20130301202510) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130301185403) do
     t.string   "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "estatus"
   end
 
   create_table "kardexes", :force => true do |t|
@@ -114,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20130301185403) do
     t.string   "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "estatus"
   end
 
   create_table "students", :force => true do |t|
@@ -145,12 +147,21 @@ ActiveRecord::Schema.define(:version => 20130301185403) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "superadmins", :force => true do |t|
+    t.string   "nombre"
+    t.date     "fecha_nac"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tetramods", :force => true do |t|
     t.integer  "clave"
     t.string   "descripcion"
     t.integer  "orden_tetramod"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "estatus"
   end
 
   create_table "users", :force => true do |t|

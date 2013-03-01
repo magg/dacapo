@@ -8,5 +8,5 @@ class Tetramod < ActiveRecord::Base
   has_many :subjects, :through => :kardexes
   has_many :students, :through => :kardexes
   
-  attr_accessible :clave, :descripcion, :orden_tetramod
+  attr_accessible :clave, :descripcion, :orden_tetramod, :estatus
 end

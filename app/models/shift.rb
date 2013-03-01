@@ -5,5 +5,5 @@ class Shift < ActiveRecord::Base
   has_many :periods, :through => :memberships
   has_many :subjects, :through => :memberships
   
-  attr_accessible :descripcion
+  attr_accessible :descripcion, :estatus
 end

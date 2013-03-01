@@ -10,5 +10,5 @@ class Period < ActiveRecord::Base
   validates :clave, :presence => true, :uniqueness => true
   validates :fecha_inicio, :fecha_fin, :presence => true
 	
-  attr_accessible :clave, :descripcion, :fecha_fin, :fecha_inicio
+  attr_accessible :clave, :descripcion, :fecha_fin, :fecha_inicio, :estatus
 end

@@ -72,7 +72,8 @@ es:
       major:   "carrera"
       group:   "grupo"
       admin:    "administrador"
-      shift:    "turn"
+      admin:    "super administrador"
+      shift:    "turno"
       subject:  "materia"
       minor:    "&aacute;rea menor"
     attributes:
@@ -92,6 +93,15 @@ es:
       major:
           descripcion: "Descripción"
           clave: "Id. Carrera"
+      tetramod:
+          clave: "Id. Tetramestre"
+          descripcion: "Nombre"
+          orden_tetramod: "Orden"
+      shift:
+         descripcion: "Nombre"
+      group:
+          descripcion: "Descripción"
+         
 #END:errors
 #END:model
 #START:errors
