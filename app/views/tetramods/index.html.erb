@@ -1,0 +1,27 @@
+<h1>Listing tetramods</h1>
+
+<table>
+  <tr>
+    <th>Clave</th>
+    <th>Descripcion</th>
+    <th>Orden tetramod</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tetramods.each do |tetramod| %>
+  <tr>
+    <td><%= tetramod.clave %></td>
+    <td><%= tetramod.descripcion %></td>
+    <td><%= tetramod.orden_tetramod %></td>
+    <td><%= link_to 'Show', tetramod %></td>
+    <td><%= link_to 'Edit', edit_tetramod_path(tetramod) %></td>
+    <td><%= link_to 'Destroy', tetramod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tetramod', new_tetramod_path %>

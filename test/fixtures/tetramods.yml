@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  clave: 1
+  descripcion: MyString
+  orden_tetramod: 1
+
+two:
+  clave: 1
+  descripcion: MyString
+  orden_tetramod: 1

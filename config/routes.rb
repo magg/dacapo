@@ -1,4 +1,12 @@
 Dacapo::Application.routes.draw do
+    
+   controller :sessions do
+     get 'login' => :new
+     post 'login' => :create
+     delete 'logout' => :destroy
+    end
+
+  resources :password_resets
 
 scope '(:locale)' do
     resources :students
@@ -10,6 +18,8 @@ scope '(:locale)' do
     resources :groups
     resources :shifts
     resources :minors
+    resources :admins
+    resources :tetramods
 end
 
   # The priority is based upon order of creation:

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228222426) do
+ActiveRecord::Schema.define(:version => 20130301001833) do
+
+  create_table "admins", :force => true do |t|
+    t.string   "nombre"
+    t.date     "fecha_nac"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "clave"
@@ -25,6 +33,20 @@ ActiveRecord::Schema.define(:version => 20130228222426) do
     t.string   "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "period_id"
+    t.integer  "subject_id"
+    t.integer  "group_id"
+    t.integer  "shift_id"
+    t.integer  "student_id"
+    t.string   "horario"
+    t.integer  "lim_faltas"
+    t.integer  "sesiones"
+    t.integer  "cupo"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "minorizations", :force => true do |t|
@@ -97,13 +119,24 @@ ActiveRecord::Schema.define(:version => 20130228222426) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "tetramods", :force => true do |t|
+    t.integer  "clave"
+    t.string   "descripcion"
+    t.integer  "orden_tetramod"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
     t.string   "rol"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "email"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Clave:</b>
+  <%= @tetramod.clave %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @tetramod.descripcion %>
+</p>
+
+<p>
+  <b>Orden tetramod:</b>
+  <%= @tetramod.orden_tetramod %>
+</p>
+
+
+<%= link_to 'Edit', edit_tetramod_path(@tetramod) %> |
+<%= link_to 'Back', tetramods_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@tetramod) do |f| %>
+  <% if @tetramod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tetramod.errors.count, "error") %> prohibited this tetramod from being saved:</h2>
+
+      <ul>
+      <% @tetramod.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :clave %><br />
+    <%= f.number_field :clave %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :orden_tetramod %><br />
+    <%= f.number_field :orden_tetramod %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
