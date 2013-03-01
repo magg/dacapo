@@ -14,7 +14,15 @@
   <tr>
     <td><%= subject.clave %></td>
     <td><%= subject.descripcion %></td>
-    <td><%= subject.matreq %></td>
+		<% n=subject.matreq.to_i
+			if n==0 
+		%>
+			<td></td>
+		<% else %>
+			<td><%= Subject.find(n).clave %></td>
+		<% end %>
+
+
     <td><%= link_to 'Show', subject %></td>
     <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
     <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>

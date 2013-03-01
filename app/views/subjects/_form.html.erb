@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :matreq %><br />
-    <%= f.text_field :matreq %>
+    <%= select("subject", "matreq", Subject.all.collect {|p| [ p.clave+ " " +p.descripcion, p.id ] } , { :include_blank => true })%>
   </div>
  <div class="field">
     <%= f.label :estatus %><br />
