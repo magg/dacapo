@@ -71,6 +71,10 @@ es:
       period:   "período"
       major:   "carrera"
       group:   "grupo"
+      admin:    "administrador"
+      shift:    "turn"
+      subject:  "materia"
+      minor:    "&aacute;rea menor"
     attributes:
       student:
           appat: "Apellido paterno"

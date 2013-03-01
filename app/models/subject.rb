@@ -3,6 +3,7 @@ class Subject < ActiveRecord::Base
   has_many :minorizations
   has_many :memberships
   has_many :curriculums
+  has_many :kardexes
     
   
   has_many :groups, :through => :memberships
@@ -15,6 +16,8 @@ class Subject < ActiveRecord::Base
   has_many :majors, :through => :curriculums
   has_many :tetramods, :through => :curriculums
   
+  has_many :tetramods, :through => :kardexes
+  has_many :students, :through => :kardexes
   
   
   validates :clave, :presence => true, :uniqueness => true

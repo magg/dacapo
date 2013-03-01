@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  student_id: 1
+  subject_id: 1
+  tetramod_id: 1
+  c1: 1
+  p1: 2013-02-28
+  c2: 1
+  p2: 2013-02-28
+  c3: 1
+  p3: 2013-02-28
+  orden_kardex: 1
+
+two:
+  student_id: 1
+  subject_id: 1
+  tetramod_id: 1
+  c1: 1
+  p1: 2013-02-28
+  c2: 1
+  p2: 2013-02-28
+  c3: 1
+  p3: 2013-02-28
+  orden_kardex: 1

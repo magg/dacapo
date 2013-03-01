@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301023212) do
+ActiveRecord::Schema.define(:version => 20130301030533) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -35,6 +35,21 @@ ActiveRecord::Schema.define(:version => 20130301023212) do
     t.string   "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "kardexes", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "subject_id"
+    t.integer  "tetramod_id"
+    t.integer  "c1"
+    t.date     "p1"
+    t.integer  "c2"
+    t.date     "p2"
+    t.integer  "c3"
+    t.date     "p3"
+    t.integer  "orden_kardex"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "majors", :force => true do |t|
