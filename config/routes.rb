@@ -1,8 +1,5 @@
 Dacapo::Application.routes.draw do
-    
-  resources :superadmins
-
-
+  
    controller :sessions do
      get 'login' => :new
      post 'login' => :create
@@ -23,6 +20,7 @@ scope '(:locale)' do
     resources :minors
     resources :admins
     resources :tetramods
+    resources :superadmins
 end
 
   # The priority is based upon order of creation:

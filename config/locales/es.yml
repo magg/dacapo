@@ -72,10 +72,10 @@ es:
       major:   "carrera"
       group:   "grupo"
       admin:    "administrador"
-      admin:    "super administrador"
+      admin:    "superadministrador"
       shift:    "turno"
       subject:  "materia"
-      minor:    "&aacute;rea menor"
+      minor:    "Área menor"
     attributes:
       student:
           appat: "Apellido paterno"
@@ -101,6 +101,14 @@ es:
          descripcion: "Nombre"
       group:
           descripcion: "Descripción"
+      minor:
+        clave: "Cve. Area Menor"
+        descripcion: "Area Menor"
+      subject:
+         clave: "Cve. Materia"
+         descripcion: "Nombre"
+         matreq: "Mat. Requisito"
+         creditos: "Créditos"
          
 #END:errors
 #END:model

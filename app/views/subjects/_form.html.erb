@@ -23,6 +23,14 @@
     <%= f.label :matreq %><br />
     <%= f.text_field :matreq %>
   </div>
+ <div class="field">
+    <%= f.label :estatus %><br />
+    <%= f.check_box :estatus, {}, 1, 0 %> Bloqueado
+  </div>
+ <div class="field">
+    <%= f.label :taller %><br />
+    <%= f.check_box :taller, {}, 1, 0 %> Bloqueado
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
