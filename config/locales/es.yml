@@ -85,8 +85,13 @@ es:
           username: "Usuario"
           password_confirmation: "Confirmación de password"
       period:
-          fecha_fin: "Fecha Fin"
-          fecha_inicio: "Fecha Inicio"
+          fecha_fin: "Final (Mes, Año)"
+          fecha_inicio: "Inicio (Mes, Año)"
+          clave: "Id. Período"
+          descripcion: "Nombre Período"
+      major:
+          descripcion: "Descripción"
+          clave: "Id. Carrera"
 #END:errors
 #END:model
 #START:errors

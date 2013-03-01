@@ -17,15 +17,19 @@
   </div>
   <div class="field">
     <%= f.label :fecha_inicio %><br />
-    <%= f.date_select :fecha_inicio %>
+    <%= f.date_select :fecha_inicio, :discard_day => true, :start_year => 2006  %>
   </div>
   <div class="field">
     <%= f.label :fecha_fin %><br />
-    <%= f.date_select :fecha_fin %>
+    <%= f.date_select :fecha_fin, :discard_day => true, :start_year => 2006  %>
   </div>
   <div class="field">
     <%= f.label :descripcion %><br />
     <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :estatus %><br />
+    <%= f.check_box :estatus, {}, 1, 0 %> Activo
   </div>
   <div class="actions">
     <%= f.submit %>
