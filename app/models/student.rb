@@ -3,6 +3,7 @@ class Student < ActiveRecord::Base
   has_one :payment
   has_many :memberships
   
+  
   has_many :groups, :through => :memberships
   has_many :shifts, :through => :memberships
   has_many :periods, :through => :memberships
