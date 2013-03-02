@@ -14,6 +14,9 @@ class MinorsController < ApplicationController
   # GET /minors/1.json
   def show
     @minor = Minor.find(params[:id])
+    @subjects = Subject.all
+    @examples = @minor.subjects
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,4 +83,24 @@ class MinorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def addminor
+    @subject = Subject.find(params[:subject][:id])
+    logger.info(params[:subject][:id])
+    @minor = Minor.find(params[:minor_id])
+    @desc = params[:descripcion]
+    @minor.minorizations.build(:subject_id => @subject.id, :minor_id => @minor.id, :descripcion => @desc)
+   #@minor.subjects << @subject
+   
+    respond_to do |format|
+          if @minor.save
+            format.html { redirect_to @minor, notice: 'Minor was successfully created.' }
+            format.json { render json: @minor, status: :created, location: @minor }
+          else
+            format.html { render action: "show" }
+            format.json { render json: @minor.errors, status: :unprocessable_entity }
+          end
+    end
+  end
+  
 end

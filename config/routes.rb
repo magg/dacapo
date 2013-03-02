@@ -17,7 +17,11 @@ scope '(:locale)' do
     resources :majors
     resources :groups
     resources :shifts
-    resources :minors
+    resources :minors do
+      collection do
+          post :addminor
+      end
+    end
     resources :admins
     resources :tetramods
     resources :superadmins

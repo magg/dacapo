@@ -9,7 +9,39 @@
   <b>Descripcion:</b>
   <%= @minor.descripcion %>
 </p>
+<br />
 
+
+<table>
+<thead>
+  <tr>
+	<th style="text-align:center">Materia</th>
+    <th style="text-align:center">Materia Menor</th>
+  </tr>
+</thead>
+<tbody>
+	<% @examples.each do |example| %>
+	  <tr>
+	    <td><%= example.descripcion %></td>
+	    <td><%= example.minorizations.first.descripcion  %></td>
+	  </tr>
+	<% end %>
+</tbody>
+</table>
+
+
+<%= form_tag('/es/minors/addminor') do -%>
+<%= select("subject", "id", @subjects.collect {|p| [ p.clave+ " " +p.descripcion, p.id ] } )%>
+<%= hidden_field_tag 'minor_id', @minor.id %>
+<br /><br />
+
+<%= text_field_tag :descripcion, params[:descripcion] %>
+<br /><br />
+
+
+<%= submit_tag "Guardar"%>
+<% end -%>
+<br />
 
 <%= link_to 'Edit', edit_minor_path(@minor) %> |
 <%= link_to 'Back', minors_path %>
