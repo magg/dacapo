@@ -6,5 +6,5 @@ class Major < ActiveRecord::Base
   
   validates :clave, :presence => true, :uniqueness => true
   
-  attr_accessible :clave, :descripcion
+  attr_accessible :clave, :descripcion, :estatus
 end

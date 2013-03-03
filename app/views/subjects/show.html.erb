@@ -15,6 +15,40 @@
   <%= @subject.matreq %>
 </p>
 
+<br /><br />
 
+
+<table>
+<thead>
+  <tr>
+	<th style="text-align:center">Carrera</th>
+    <th style="text-align:center">Tetra/Modulo</th>
+    <th style="text-align:center">Orden</th>
+  </tr>
+</thead>
+<tbody>
+	<% @examples.each do |example| %>
+	  <tr>
+	    <td><%= Major.find(example.major_id).descripcion %></td>
+	    <td><%= Tetramod.find(example.tetramod_id).descripcion  %></td>
+		<td><%= example.orden_kardex  %></td>
+	  </tr>
+	<% end %>
+</tbody>
+</table>
+
+<%= form_tag('/es/subjects/addtomajor') do -%>
+<br /><br />
+<%= select("major", "id", @majors.collect {|p| [ p.descripcion, p.id ] } )%>
+<%= select("tetra", "id", @tetras.collect {|p| [ p.descripcion, p.id ] } )%>
+<%= text_field_tag 'orden' %>
+<%= hidden_field_tag 'subject_id', @subject.id %>
+<br /><br />
+
+<%= submit_tag "Guardar"%>
+
+<% end -%>
+
+<br />
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>

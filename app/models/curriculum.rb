@@ -1,4 +1,4 @@
-class Curriculums < ActiveRecord::Base
+class Curriculum < ActiveRecord::Base
   belongs_to :subject
   belongs_to :major
   belongs_to :tetramod

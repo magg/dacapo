@@ -14,6 +14,9 @@ class SubjectsController < ApplicationController
   # GET /subjects/1.json
   def show
     @subject = Subject.find(params[:id])
+    @majors = Major.all
+    @tetras = Tetramod.all
+    @examples = Curriculum.where("subject_id = ?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,4 +83,25 @@ class SubjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+   
+  def addtomajor
+       @subject = Subject.find(params[:subject_id])
+       #logger.info(params[:subject][:id])
+       @major = Major.find(params[:major][:id])
+       @tetra = Tetramod.find(params[:tetra][:id])
+       orden = params[:orden]
+       
+       @subject.curriculums.build(:major_id => @major.id, :subject_id => @subject.id, :tetramod_id => @tetra.id, :orden_kardex => orden)
+
+     respond_to do |format|
+       if @subject.save
+         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+         format.json { render json: @subject, status: :created, location: @subject }
+       else
+         format.html { render action: "show" }
+         format.json { render json: @subject.errors, status: :unprocessable_entity }
+       end
+     end
+   end
+  
 end

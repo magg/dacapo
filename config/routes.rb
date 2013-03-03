@@ -13,7 +13,11 @@ scope '(:locale)' do
     resources :periods
     resources :payments
     resources :users
-    resources :subjects
+    resources :subjects do
+      collection do
+          post :addtomajor
+      end
+    end
     resources :majors
     resources :groups
     resources :shifts

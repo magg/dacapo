@@ -15,7 +15,8 @@ class MinorsController < ApplicationController
   def show
     @minor = Minor.find(params[:id])
     @subjects = Subject.all
-    @examples = @minor.subjects
+    #@examples = @minor.subjects
+    @examples = Minorization.where("minor_id = ?", params[:id])
     
 
     respond_to do |format|
@@ -86,7 +87,7 @@ class MinorsController < ApplicationController
   
   def addminor
     @subject = Subject.find(params[:subject][:id])
-    logger.info(params[:subject][:id])
+    #logger.info(params[:subject][:id])
     @minor = Minor.find(params[:minor_id])
     @desc = params[:descripcion]
     @minor.minorizations.build(:subject_id => @subject.id, :minor_id => @minor.id, :descripcion => @desc)

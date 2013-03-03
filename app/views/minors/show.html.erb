@@ -22,8 +22,8 @@
 <tbody>
 	<% @examples.each do |example| %>
 	  <tr>
-	    <td><%= example.descripcion %></td>
-	    <td><%= example.minorizations.first.descripcion  %></td>
+	    <td><%= Subject.find(example.subject_id).descripcion %></td>
+	    <td><%= example.descripcion  %></td>
 	  </tr>
 	<% end %>
 </tbody>
