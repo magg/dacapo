@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301213555) do
+ActiveRecord::Schema.define(:version => 20130304033533) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20130301213555) do
     t.integer "period_id"
     t.integer "subject_id"
   end
+
+  add_index "periods_subjects", ["period_id", "subject_id"], :name => "index_periods_subjects_on_period_id_and_subject_id", :unique => true
 
   create_table "shifts", :force => true do |t|
     t.string   "descripcion"

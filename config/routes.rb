@@ -15,7 +15,9 @@ scope '(:locale)' do
     resources :users
     resources :subjects do
       collection do
+          get :periods
           post :addtomajor
+          post :addtoperiod
       end
     end
     resources :majors

@@ -1,5 +1,5 @@
 class Subject < ActiveRecord::Base
-  has_and_belongs_to_many :periods
+  has_and_belongs_to_many :periods, :join_table => :periods_subjects
   has_many :minorizations
   has_many :memberships
   has_many :curriculums
@@ -9,7 +9,7 @@ class Subject < ActiveRecord::Base
   has_many :groups, :through => :memberships
   has_many :students, :through => :memberships
   has_many :shifts, :through => :memberships
-  has_many :periods, :through => :memberships
+  has_many :periods_members, :through => :memberships
 
   has_many :minors, :through => :minorizations
   

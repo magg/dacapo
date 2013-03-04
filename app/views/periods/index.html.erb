@@ -3,8 +3,6 @@
 <table>
   <tr>
     <th>Clave</th>
-    <th>Fecha inicio</th>
-    <th>Fecha fin</th>
     <th>Descripcion</th>
     <th></th>
     <th></th>
@@ -14,8 +12,6 @@
 <% @periods.each do |period| %>
   <tr>
     <td><%= period.clave %></td>
-    <td><%= period.fecha_inicio %></td>
-    <td><%= period.fecha_fin %></td>
     <td><%= period.descripcion %></td>
     <td><%= link_to 'Show', period %></td>
     <td><%= link_to 'Edit', edit_period_path(period) %></td>

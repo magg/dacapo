@@ -103,5 +103,35 @@ class SubjectsController < ApplicationController
        end
      end
    end
+   
+   
+   def periods
+     @subjects = Subject.all
+     @majors = Major.all
+     @periods = Period.all
+     
+     respond_to do |format|
+       format.html # periods.html.erb
+       format.json { render json: @subject }
+     end
+   end
+   
+   def addtoperiod
+        @period = Period.find(params[:period][:id])
+        @major = Major.find(params[:major][:id])
+        @subject = Subject.find(params[:subject][:id])        
+        
+        begin
+          # do stuff
+          @period.subjects << @subject
+        rescue ActiveRecord::RecordNotUnique
+          # handle the exception however you want to
+        end
+        
+
+      respond_to do |format|
+          format.html { redirect_to action: "periods" }
+      end
+    end
   
 end

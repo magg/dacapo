@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag('/es/subjects/addtoperiod') do -%>
+<br /><br />
+<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] } )%>
+<br /><br />
+<%= select("major", "id", @majors.collect {|p| [ p.descripcion, p.id ] } )%>
+<br /><br />
+
+<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] } )%>
+<br /><br />
+
+<%= submit_tag "Guardar"%>
+
+<% end -%>
+
+<br />
+<%= link_to 'Back', subjects_path %>

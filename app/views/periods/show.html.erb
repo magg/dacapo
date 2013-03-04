@@ -20,6 +20,20 @@
   <%= @period.descripcion %>
 </p>
 
+<table>
+<thead>
+  <tr>
+	<th style="text-align:center">Materias elegidas</th>
+  </tr>
+</thead>
+<tbody>
+	<% @examples.each do |example| %>
+	  <tr>
+	    <td><%= example.descripcion %></td>
+	  </tr>
+	<% end %>
+</tbody>
+</table>
 
 <%= link_to 'Edit', edit_period_path(@period) %> |
 <%= link_to 'Back', periods_path %>

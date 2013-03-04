@@ -14,6 +14,7 @@ class PeriodsController < ApplicationController
   # GET /periods/1.json
   def show
     @period = Period.find(params[:id])
+    @examples = @period.subjects 
 
     respond_to do |format|
       format.html # show.html.erb
