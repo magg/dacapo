@@ -38,15 +38,23 @@
 </table>
 
 <%= form_tag('/es/subjects/addtomajor') do -%>
-<br /><br />
-<%= select("major", "id", @majors.collect {|p| [ p.descripcion, p.id ] } )%>
-<%= select("tetra", "id", @tetras.collect {|p| [ p.descripcion, p.id ] } )%>
-<%= text_field_tag 'orden' %>
+
+<div class="field">
+    <%= label_tag :carrera %><br />
+	<%= select("major", "id", @majors.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :tetramestre %><br />
+	<%= select("tetra", "id", @tetras.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :orden %><br />
+	<%= text_field_tag 'orden' %>
+</div>
 <%= hidden_field_tag 'subject_id', @subject.id %>
-<br /><br />
-
-<%= submit_tag "Guardar"%>
-
+<div class="field">
+	<%= submit_tag "Guardar"%>	
+</div>
 <% end -%>
 
 <br />

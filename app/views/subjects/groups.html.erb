@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag('/es/subjects/addtogroup') do -%>
+<div class="field">
+    <%= label_tag :periodo %><br />
+	<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :tetramestre %><br />
+	<%= select("tetra", "id", @tetras.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :grupo %><br />
+	<%= select("group", "id", @groups.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :materia %><br />
+	<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :Turno %><br />
+	<%= select("shift", "id", @shifts.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>
+<div class="field">
+    <%= label_tag :horario %><br />
+	<%= text_field_tag 'horario' %>
+</div>
+<div class="field">
+    <%= label_tag :limite %><br />
+	<%= text_field_tag 'lim' %>
+</div>
+<div class="field">
+    <%= label_tag :sesiones %><br />
+	<%= text_field_tag 'sesiones' %>
+</div>
+<div class="field">
+    <%= label_tag :cupo %><br />
+	<%= text_field_tag 'cupo' %>
+</div>
+<div class="field">
+<%= submit_tag "Guardar"%>
+</div>
+
+<% end -%>
+
+<br />
+<%= link_to 'Back', subjects_path %>

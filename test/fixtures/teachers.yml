@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  apmat: MyString
+  appat: MyString
+  comentario: MyString
+  direccion: MyString
+  fecha_nac: 2013-03-04
+  nombre: MyString
+  rfc_fis: MyString
+  tel_fis: MyString
+  telefono1: MyString
+  telefono2: MyString
+  telefono3: MyString
+  user_id: 1
+
+two:
+  apmat: MyString
+  appat: MyString
+  comentario: MyString
+  direccion: MyString
+  fecha_nac: 2013-03-04
+  nombre: MyString
+  rfc_fis: MyString
+  tel_fis: MyString
+  telefono1: MyString
+  telefono2: MyString
+  telefono3: MyString
+  user_id: 1

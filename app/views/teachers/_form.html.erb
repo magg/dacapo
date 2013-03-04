@@ -1,0 +1,65 @@
+<%= form_for(@teacher) do |f| %>
+  <% if @teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% @teacher.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :apmat %><br />
+    <%= f.text_field :apmat %>
+  </div>
+  <div class="field">
+    <%= f.label :appat %><br />
+    <%= f.text_field :appat %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br />
+    <%= f.text_field :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nac %><br />
+    <%= f.date_select :fecha_nac %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :rfc_fis %><br />
+    <%= f.text_field :rfc_fis %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_fis %><br />
+    <%= f.text_field :tel_fis %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono1 %><br />
+    <%= f.text_field :telefono1 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono2 %><br />
+    <%= f.text_field :telefono2 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono3 %><br />
+    <%= f.text_field :telefono3 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -31,15 +31,18 @@
 
 
 <%= form_tag('/es/minors/addminor') do -%>
-<%= select("subject", "id", @subjects.collect {|p| [ p.clave+ " " +p.descripcion, p.id ] } )%>
+<div class="field">
+    <%= label_tag :materia %><br />
+	<%= select("subject", "id", @subjects.collect {|p| [ p.clave+ " " +p.descripcion, p.id ] } )%>
+</div>
 <%= hidden_field_tag 'minor_id', @minor.id %>
-<br /><br />
-
-<%= text_field_tag :descripcion, params[:descripcion] %>
-<br /><br />
-
-
-<%= submit_tag "Guardar"%>
+<div class="field">
+    <%= label_tag :descripcion %><br />
+	<%= text_field_tag :descripcion, params[:descripcion] %>
+</div>
+<div class="field">
+	<%= submit_tag "Guardar"%>
+</div>
 <% end -%>
 <br />
 

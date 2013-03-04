@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304033533) do
+ActiveRecord::Schema.define(:version => 20130304094445) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -155,6 +155,23 @@ ActiveRecord::Schema.define(:version => 20130304033533) do
   create_table "superadmins", :force => true do |t|
     t.string   "nombre"
     t.date     "fecha_nac"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "teachers", :force => true do |t|
+    t.string   "apmat"
+    t.string   "appat"
+    t.string   "comentario"
+    t.string   "direccion"
+    t.date     "fecha_nac"
+    t.string   "nombre"
+    t.string   "rfc_fis"
+    t.string   "tel_fis"
+    t.string   "telefono1"
+    t.string   "telefono2"
+    t.string   "telefono3"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

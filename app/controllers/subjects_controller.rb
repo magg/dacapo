@@ -112,7 +112,6 @@ class SubjectsController < ApplicationController
      
      respond_to do |format|
        format.html # periods.html.erb
-       format.json { render json: @subject }
      end
    end
    
@@ -133,5 +132,17 @@ class SubjectsController < ApplicationController
           format.html { redirect_to action: "periods" }
       end
     end
+
+   def groups
+     @subjects = Subject.all
+     @tetras = Tetramod.all
+     @periods = Period.all
+     @groups = Group.all
+     @shifts = Shift.all
+     
+     respond_to do |format|
+       format.html # periods.html.erb
+     end
+   end
   
 end
