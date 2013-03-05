@@ -145,4 +145,32 @@ class SubjectsController < ApplicationController
      end
    end
   
+  
+  
+   def addtogroup
+        @period = Period.find(params[:period][:id])
+        @subject = Subject.find(params[:subject][:id])
+        @group = Group.find(params[:group][:id])
+        @shift = Shift.find(params[:shift][:id])
+        cupo = params[:cupo]
+        horario = params[:horario]
+        limite = params[:limite]
+        sesiones = params[:sesiones]
+        
+
+        @subject.memberships.build(:period_id => @period.id, :subject_id => @subject.id,  
+        :group_id => @group.id, :shift_id => @shift.id, :horario => horario,
+        :lim_faltas => limite, :sesiones => sesiones,:cupo => cupo )
+
+      respond_to do |format|
+        if @subject.save
+          format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+          format.json { render json: @subject, status: :created, location: @subject }
+        else
+          format.html { render action: "show" }
+          format.json { render json: @subject.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  
 end

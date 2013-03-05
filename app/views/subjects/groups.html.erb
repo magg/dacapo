@@ -6,10 +6,6 @@
 	<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] } )%>
 </div>
 <div class="field">
-    <%= label_tag :tetramestre %><br />
-	<%= select("tetra", "id", @tetras.collect {|p| [ p.descripcion, p.id ] } )%>
-</div>
-<div class="field">
     <%= label_tag :grupo %><br />
 	<%= select("group", "id", @groups.collect {|p| [ p.descripcion, p.id ] } )%>
 </div>
@@ -18,7 +14,7 @@
 	<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] } )%>
 </div>
 <div class="field">
-    <%= label_tag :Turno %><br />
+    <%= label_tag :turno %><br />
 	<%= select("shift", "id", @shifts.collect {|p| [ p.descripcion, p.id ] } )%>
 </div>
 <div class="field">

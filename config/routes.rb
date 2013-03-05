@@ -19,6 +19,7 @@ scope '(:locale)' do
           get :groups
           post :addtomajor
           post :addtoperiod
+          post :addtogroup
       end
     end
     resources :majors
