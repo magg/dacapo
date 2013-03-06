@@ -30,12 +30,7 @@
     <%= f.text_field :apmat %>
   </div>
 <%= f.fields_for :user do |ef| %>
-  <div class="control-group">
-    <%= ef.label :Usuario, :class=>"control-label" %>
-   <div class="controls">
-    <%= ef.text_field :username %>
-  </div>
-</div>
+ 
 <div class="control-group">
     <%= ef.label :email, :class=>"control-label" %>
    <div class="controls">
