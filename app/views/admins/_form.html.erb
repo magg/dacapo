@@ -15,13 +15,35 @@
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre %>
   </div>
+
+<%= f.fields_for :user do |ef| %>
+<div class="control-group">
+    <%= ef.label :username, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :username %>
+  </div>
+<div class="control-group">
+    <%= ef.label :password, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :password %>
+</div>
+<div class="control-group">
+    <%= ef.label :password_confirmation, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :password_confirmation %>
+</div>
+<div class="control-group">
+    <%= ef.label :email, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :email %>
+</div>
+<%= ef.hidden_field :rol , :value =>"Admin"  %>
+</div>
+<%- end %>
+
   <div class="field">
     <%= f.label :fecha_nac %><br />
-    <%= f.date_select :fecha_nac %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.date_select :fecha_nac, :start_year => 1950 %>
   </div>
   <div class="actions">
     <%= f.submit %>

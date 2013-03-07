@@ -172,5 +172,12 @@ class SubjectsController < ApplicationController
         end
       end
     end
+    
+     def preview
+    # ... do something meaningful here ...
+    @period = Period.find(params[:period])
+    
+    render :partial => 'preview', :content_type => 'text/html'
+    end
   
 end

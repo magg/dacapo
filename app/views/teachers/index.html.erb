@@ -2,18 +2,9 @@
 
 <table>
   <tr>
-    <th>Apmat</th>
-    <th>Appat</th>
-    <th>Comentario</th>
-    <th>Direccion</th>
-    <th>Fecha nac</th>
     <th>Nombre</th>
-    <th>Rfc fis</th>
-    <th>Tel fis</th>
-    <th>Telefono1</th>
-    <th>Telefono2</th>
-    <th>Telefono3</th>
-    <th>User</th>
+ 	<th>Appat</th>
+    <th>Apmat</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,18 +12,9 @@
 
 <% @teachers.each do |teacher| %>
   <tr>
-    <td><%= teacher.apmat %></td>
-    <td><%= teacher.appat %></td>
-    <td><%= teacher.comentario %></td>
-    <td><%= teacher.direccion %></td>
-    <td><%= teacher.fecha_nac %></td>
     <td><%= teacher.nombre %></td>
-    <td><%= teacher.rfc_fis %></td>
-    <td><%= teacher.tel_fis %></td>
-    <td><%= teacher.telefono1 %></td>
-    <td><%= teacher.telefono2 %></td>
-    <td><%= teacher.telefono3 %></td>
-    <td><%= teacher.user_id %></td>
+ 	<td><%= teacher.appat %></td>
+    <td><%= teacher.apmat %></td>
     <td><%= link_to 'Show', teacher %></td>
     <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
     <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>

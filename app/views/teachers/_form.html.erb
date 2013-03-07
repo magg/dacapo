@@ -1,3 +1,7 @@
+<% o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten  
+   string  =  (0..8).map{ o[rand(o.length)]  }.join
+%>
+
 <%= form_for(@teacher) do |f| %>
   <% if @teacher.errors.any? %>
     <div id="error_explanation">
@@ -12,13 +16,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :apmat %><br />
-    <%= f.text_field :apmat %>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
   </div>
   <div class="field">
     <%= f.label :appat %><br />
     <%= f.text_field :appat %>
   </div>
+  <div class="field">
+    <%= f.label :apmat %><br />
+    <%= f.text_field :apmat %>
+  </div>
+
+<%= f.fields_for :user do |ef| %>
+
+<div class="control-group">
+    <%= ef.label :email, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :email %>
+  </div>
+<%= ef.hidden_field :rol , :value =>"Teacher"  %>
+<%= ef.hidden_field :password, :value => string %>
+<%= ef.hidden_field :password_confirmation, :value => string %>
+</div>
+<%- end %>
+
+
   <div class="field">
     <%= f.label :comentario %><br />
     <%= f.text_field :comentario %>
@@ -30,10 +53,6 @@
   <div class="field">
     <%= f.label :fecha_nac %><br />
     <%= f.date_select :fecha_nac %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
   </div>
   <div class="field">
     <%= f.label :rfc_fis %><br />
@@ -54,10 +73,6 @@
   <div class="field">
     <%= f.label :telefono3 %><br />
     <%= f.text_field :telefono3 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

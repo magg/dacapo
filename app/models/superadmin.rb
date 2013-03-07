@@ -4,5 +4,5 @@ class Superadmin < ActiveRecord::Base
   validates :nombre,  :presence => true
   validates_associated :user
   accepts_nested_attributes_for :user, :reject_if => lambda { |a| a[:content].blank? }
-  attr_accessible :fecha_nac, :nombre, :user_id
+  attr_accessible :fecha_nac, :nombre, :user_id, :user_attributes
 end

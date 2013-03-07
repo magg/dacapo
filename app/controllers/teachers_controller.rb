@@ -24,8 +24,10 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   # GET /teachers/new.json
   def new
+    @user = User.new
     @teacher = Teacher.new
-
+    @teacher.user = @user
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @teacher }
@@ -35,12 +37,15 @@ class TeachersController < ApplicationController
   # GET /teachers/1/edit
   def edit
     @teacher = Teacher.find(params[:id])
+    @user = @teacher.user
   end
 
   # POST /teachers
   # POST /teachers.json
   def create
+    @user = User.new(params[:teacher][:user_attributes])
     @teacher = Teacher.new(params[:teacher])
+    @teacher.user = @user
 
     respond_to do |format|
       if @teacher.save
@@ -59,7 +64,8 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
 
     respond_to do |format|
-      if @teacher.update_attributes(params[:teacher])
+      if @teacher.update_attributes(params[:teacher]) and
+        @teacher.user.update_attributes(params[:teacher][:user_attributes])
         format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
         format.json { head :no_content }
       else
@@ -73,8 +79,10 @@ class TeachersController < ApplicationController
   # DELETE /teachers/1.json
   def destroy
     @teacher = Teacher.find(params[:id])
-    @teacher.destroy
-
+    id = @student.user_id
+    @user = User.find(id)
+    @user.destroy
+     
     respond_to do |format|
       format.html { redirect_to teachers_url }
       format.json { head :no_content }

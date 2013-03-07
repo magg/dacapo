@@ -1,10 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_tag('/es/subjects/addtogroup') do -%>
+<%= form_tag({:action => 'preview'}, :remote => true, :'data-update-target' => 'update-container') do %>
 <div class="field">
     <%= label_tag :periodo %><br />
-	<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] } )%>
+	<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] },
+ 	{:include_blank => true}, {:onchange => "update_div(this.value)"}  )%>
 </div>
+
+<% end -%>
+
+
+<%= form_tag('/es/subjects/addtogroup') do -%>
+
 <div class="field">
     <%= label_tag :grupo %><br />
 	<%= select("group", "id", @groups.collect {|p| [ p.descripcion, p.id ] } )%>
@@ -41,3 +48,7 @@
 
 <br />
 <%= link_to 'Back', subjects_path %>
+
+<div id="update-container">
+...
+</div>

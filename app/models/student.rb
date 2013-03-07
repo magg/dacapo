@@ -13,7 +13,9 @@ class Student < ActiveRecord::Base
   has_many :tetramods, :through => :kardexes
   has_many :subjects, :through => :kardexes
   
-  attr_accessible :apmat, :appat, :comentario, :direccion, :estatus, :fecha_nac, :instrumento, :nombre, :rfc_fis, :tel_fis, :telefono1, :telefono2, :telefono3, :tipo_clase, :tipo_pago, :user_id
+  attr_accessible :apmat, :appat, :comentario, :direccion, :estatus, :fecha_nac, :instrumento, 
+  :nombre, :rfc_fis, :tel_fis, :telefono1, :telefono2, :telefono3, :tipo_clase, :tipo_pago, 
+  :user_attributes, :payment_id
 
   validates :nombre,:presence => true
   validates_associated :user

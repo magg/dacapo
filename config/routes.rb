@@ -20,6 +20,8 @@ scope '(:locale)' do
           post :addtomajor
           post :addtoperiod
           post :addtogroup
+          get :preview
+          post :preview
       end
     end
     resources :majors
