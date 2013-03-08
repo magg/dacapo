@@ -1,6 +1,9 @@
 class Student < ActiveRecord::Base
   belongs_to :user
   has_one :payment
+  has_one :major
+  has_one :minor
+  
   has_many :memberships
   has_many :kardexes
   
@@ -15,7 +18,7 @@ class Student < ActiveRecord::Base
   
   attr_accessible :apmat, :appat, :comentario, :direccion, :estatus, :fecha_nac, :instrumento, 
   :nombre, :rfc_fis, :tel_fis, :telefono1, :telefono2, :telefono3, :tipo_clase, :tipo_pago, 
-  :user_attributes, :payment_id
+  :user_attributes, :payment_id, :major_id, :minor_id
 
   validates :nombre,:presence => true
   validates_associated :user

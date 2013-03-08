@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag({:action => 'preview'}, :remote => true, :'data-update-target' => 'update-container') do %>
+<div class="field">
+    <%= label_tag :periodo %><br />
+	<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] })%>
+</div>
+
+<div class="field">
+    <%= label_tag :student %><br />
+	<%= select("student", "id", @students.collect {|p| [ p.nombre + " " + p.appat + " " + p.apmat, p.id ] },
+ 	{:include_blank => true}, {:onchange => "update_div(this.value, document.getElementById('period_id').value)"} )%>
+</div>
+
+
+<% end -%>
+
+<br />
+<%= link_to 'Back', subjects_path %>
+
+<div id="update-container">
+	---
+</div>

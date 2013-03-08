@@ -1,1 +1,4 @@
-hola
+<div class="field">
+    <%= label_tag :materia %><br />
+	<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] } )%>
+</div>

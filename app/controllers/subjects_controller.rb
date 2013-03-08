@@ -176,8 +176,22 @@ class SubjectsController < ApplicationController
      def preview
     # ... do something meaningful here ...
     @period = Period.find(params[:period])
+    @subjects = @period.subjects
     
-    render :partial => 'preview', :content_type => 'text/html'
+    render :partial => 'preview', :object => @subjects, :content_type => 'text/html'
     end
+    
+    
+    def inscripccion
+      @periods = Period.all
+      @students = Student.all
+
+ 
+
+      respond_to do |format|
+        format.html # periods.html.erb
+      end
+    end
+    
   
 end

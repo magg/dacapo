@@ -24,11 +24,11 @@ $('#' + target).html(data);
 });
 });
 
-function update_div(per_id) {  
+function update_div(stu_id,per_id) {  
     $.ajax({
       url: "/es/subjects/preview",
       type: "POST",
-      data: { period: per_id },
+      data: { period: per_id, student: stu_id },
 	  dataType: "html",
 	  success: function(data) {
 	     $("#update-container").html(data);

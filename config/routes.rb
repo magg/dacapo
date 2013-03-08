@@ -22,6 +22,7 @@ scope '(:locale)' do
           post :addtogroup
           get :preview
           post :preview
+          get :inscripccion
       end
     end
     resources :majors

@@ -1,5 +1,6 @@
 class Major < ActiveRecord::Base
   has_many :curriculums
+  has_many :students
   
   has_many :subjects, :through => :curriculums
   has_many :tetramods, :through => :curriculums

@@ -69,7 +69,14 @@
   <div class="field">
     <%= f.label :payment_id %><br />
     <%= select("student", "payment_id", Payment.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
-    
+  </div>
+  <div class="field">
+    <%= f.label :major_id %><br />
+    <%= select("student", "major_id", Major.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
+  </div>
+  <div class="field">
+    <%= f.label :minor_id %><br />
+    <%= select("student", "minor_id", Minor.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
   </div>
   <div class="field">
     <%= f.label :tipo_clase %><br />
