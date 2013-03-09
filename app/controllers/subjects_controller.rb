@@ -176,7 +176,10 @@ class SubjectsController < ApplicationController
      def preview
     # ... do something meaningful here ...
     @period = Period.find(params[:period])
-    @subjects = @period.subjects
+    @student = Student.find(params[:student])
+    major = Major.find(@student.major_id)
+    subject_ids = major.curriculums.select("subject_id").map(&:subject_id)
+    @subjects = @period.subjects.find(subject_ids)
     
     render :partial => 'preview', :object => @subjects, :content_type => 'text/html'
     end

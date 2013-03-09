@@ -1,4 +1,24 @@
+<script type='text/javascript'>
+
+$().ready(function() {  
+ $('#add-sel').click(function() {  
+  return !$('#subject_id option:selected').remove().appendTo('#subject-chosen');  
+ });  
+ $('#remove-sel').click(function() {  
+  return !$('#subject-chosen option:selected').remove().appendTo('#subject_id');  
+ });  
+});
+
+</script>
 <div class="field">
     <%= label_tag :materia %><br />
-	<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] } )%>
+	<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] },{} , {:multiple => true, :size => 10} )%>
+	<%= link_to("Add", "#", html_options = {:id => "add-sel"}) %>
+</div>
+
+<div class="field">
+    <%= label_tag :materia %><br />
+	<%= select_tag "subject-chosen","<option></option>".html_safe, :multiple => true, :size => 10 %>
+	<%= link_to("Remove", "#", html_options = {:id => "remove-sel"}) %>
+	
 </div>
