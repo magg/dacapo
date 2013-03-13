@@ -202,8 +202,16 @@ class SubjectsController < ApplicationController
     
        def inscribir
         @subjects = Subject.find(params[:subjectchosen])
-
-      render :partial => 'inscribir', :content_type => 'text/html'
+        @period = Period.find(params[:period][:id])
+        @student = Student.find(params[:student][:id])
+        @subjects.each do |sub|
+          @student.enrollments.build(:student_id => @student.id, :subject_id => sub.id, :period_id => @period.id)
+        end
+        
+         if @student.save
+           render :partial => 'inscribir', :content_type => 'text/html'
+         else
+         end
       end
     
   
