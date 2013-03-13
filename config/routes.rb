@@ -23,6 +23,7 @@ scope '(:locale)' do
           get :preview
           post :preview
           get :inscripccion
+          post :inscribir
       end
     end
     resources :majors

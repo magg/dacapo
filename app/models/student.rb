@@ -6,12 +6,20 @@ class Student < ActiveRecord::Base
   
   has_many :memberships
   has_many :kardexes
+  has_many :enrollments
   
   
   has_many :groups, :through => :memberships
   has_many :shifts, :through => :memberships
   has_many :periods, :through => :memberships
   has_many :subjects, :through => :memberships
+  
+  
+  has_many :students_enrolls, :through => :enrollments
+  has_many :shifts_enrolls, :through => :enrollments
+  has_many :periods_enrolls, :through => :enrollments
+  has_many :subjects_enrolls, :through => :enrollments
+  
   
   has_many :tetramods, :through => :kardexes
   has_many :subjects, :through => :kardexes

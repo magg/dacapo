@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130309035615) do
+ActiveRecord::Schema.define(:version => 20130313013121) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -28,6 +28,26 @@ ActiveRecord::Schema.define(:version => 20130309035615) do
     t.integer  "orden_kardex"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "enrollments", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "subject_id"
+    t.integer  "period_id"
+    t.integer  "group_id"
+    t.integer  "c1"
+    t.integer  "f1"
+    t.integer  "c2"
+    t.integer  "f2"
+    t.integer  "c3"
+    t.integer  "f3"
+    t.integer  "calif_final"
+    t.integer  "tot_faltas"
+    t.integer  "estatus"
+    t.integer  "oportunidad"
+    t.integer  "promedio"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "groups", :force => true do |t|
@@ -66,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20130309035615) do
     t.integer  "subject_id"
     t.integer  "group_id"
     t.integer  "shift_id"
-    t.integer  "student_id"
+    t.integer  "teacher_id"
     t.string   "horario"
     t.integer  "lim_faltas"
     t.integer  "sesiones"

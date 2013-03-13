@@ -2,10 +2,16 @@
 
 $().ready(function() {  
  $('#add-sel').click(function() {  
-  return !$('#subject_id option:selected').remove().appendTo('#subject-chosen');  
+  return !$('#subject_id option:selected').remove().appendTo('#subjectchosen');  
  });  
  $('#remove-sel').click(function() {  
-  return !$('#subject-chosen option:selected').remove().appendTo('#subject_id');  
+  return !$('#subjectchosen option:selected').remove().appendTo('#subject_id');  
+ });  
+});
+
+$('#form-ajax').submit(function() {  
+ $('#subjectchosen option').each(function(i) {  
+  $(this).attr("selected", "selected");  
  });  
 });
 
@@ -18,7 +24,7 @@ $().ready(function() {
 
 <div class="field">
     <%= label_tag :materia %><br />
-	<%= select_tag "subject-chosen","<option></option>".html_safe, :multiple => true, :size => 10 %>
+	<%= select_tag "subjectchosen","".html_safe, :multiple => true, :size => 10 %>
 	<%= link_to("Remove", "#", html_options = {:id => "remove-sel"}) %>
 	
 </div>

@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= form_tag({:action => 'inscribir'}, :id => 'form-ajax', :remote => true, :'data-update-target' => 'notice-update') do %>
 
-<%= form_tag({:action => 'preview'}, :remote => true, :'data-update-target' => 'update-container') do %>
+<p id="notice-update"></p>
+
 <div class="field">
     <%= label_tag :periodo %><br />
 	<%= select("period", "id", @periods.collect {|p| [ p.descripcion, p.id ] })%>
@@ -13,7 +14,6 @@
 </div>
 
 
-<% end -%>
 
 <br />
 <%= link_to 'Back', subjects_path %>
@@ -21,3 +21,7 @@
 <div id="update-container">
 	---
 </div>
+
+ <%= submit_tag 'Submit', :disable_with => 'Please wait...', :class => 'submit' %>
+
+<% end -%>

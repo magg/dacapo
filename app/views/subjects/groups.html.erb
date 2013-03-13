@@ -19,6 +19,10 @@
 	<%= select("shift", "id", @shifts.collect {|p| [ p.descripcion, p.id ] } )%>
 </div>
 <div class="field">
+    <%= label_tag :maestro %><br />
+	<%= select("teacher", "id", @teachers.collect {|p| [ p.nombre + " " + p.appat + " " + p.apmat, p.id ] } )%>
+</div>
+<div class="field">
     <%= label_tag :horario %><br />
 	<%= text_field_tag 'horario' %>
 </div>

@@ -139,6 +139,8 @@ class SubjectsController < ApplicationController
      @periods = Period.all
      @groups = Group.all
      @shifts = Shift.all
+     @teachers = Teacher.all
+     
      
      respond_to do |format|
        format.html # periods.html.erb
@@ -152,6 +154,8 @@ class SubjectsController < ApplicationController
         @subject = Subject.find(params[:subject][:id])
         @group = Group.find(params[:group][:id])
         @shift = Shift.find(params[:shift][:id])
+        @teacher = Teacher.find(params[:teacher][:id])
+        
         cupo = params[:cupo]
         horario = params[:horario]
         limite = params[:limite]
@@ -159,7 +163,7 @@ class SubjectsController < ApplicationController
         
 
         @subject.memberships.build(:period_id => @period.id, :subject_id => @subject.id,  
-        :group_id => @group.id, :shift_id => @shift.id, :horario => horario,
+        :group_id => @group.id, :shift_id => @shift.id, :teacher_id => @teacher.id, :horario => horario,
         :lim_faltas => limite, :sesiones => sesiones,:cupo => cupo )
 
       respond_to do |format|
@@ -195,6 +199,12 @@ class SubjectsController < ApplicationController
         format.html # periods.html.erb
       end
     end
+    
+       def inscribir
+        @subjects = Subject.find(params[:subjectchosen])
+
+      render :partial => 'inscribir', :content_type => 'text/html'
+      end
     
   
 end
