@@ -80,11 +80,6 @@ var bar = function(){
 
 </div>
 
-<div class="field">
-    <%= label_tag :alumno %><br />
-	<%= select("student", "id", @enrollments.collect {|p| [ p.student.nombre + " " + p.student.appat + " " + p.student.apmat, p.student.id ] }, {:include_blank => true} )%>
-</div>
-
 <table>
 	<thead>
 		<tr>

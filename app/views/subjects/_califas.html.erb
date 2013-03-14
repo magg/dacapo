@@ -24,3 +24,8 @@
 	<% end %>
 </tbody>
 </table>
+
+<div class="field">
+    <%= label_tag :alumno %><br />
+	<%= select("student", "id", @enrolls.collect {|p| [ p.student.nombre + " " + p.student.appat + " " + p.student.apmat, p.student.id ] }, {:include_blank => true} )%>
+</div>
