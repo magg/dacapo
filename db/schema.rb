@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313013121) do
+ActiveRecord::Schema.define(:version => 20130314045423) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(:version => 20130313013121) do
     t.integer  "subject_id"
     t.integer  "period_id"
     t.integer  "group_id"
-    t.integer  "c1"
+    t.string   "c1"
     t.integer  "f1"
-    t.integer  "c2"
+    t.string   "c2"
     t.integer  "f2"
-    t.integer  "c3"
+    t.string   "c3"
     t.integer  "f3"
-    t.integer  "calif_final"
+    t.string   "calif_final"
     t.integer  "tot_faltas"
     t.integer  "estatus"
     t.integer  "oportunidad"

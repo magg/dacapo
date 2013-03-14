@@ -24,6 +24,10 @@ scope '(:locale)' do
           post :preview
           get :inscripccion
           post :inscribir
+          get :calificaciones
+          post :califas
+          post :grades
+          
       end
     end
     resources :majors

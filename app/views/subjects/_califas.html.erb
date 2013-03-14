@@ -1,0 +1,26 @@
+<table>
+<thead>
+  <tr>
+	<th style="text-align:center">Nombre</th>
+    <th style="text-align:center">C1</th>
+    <th style="text-align:center">F1</th>
+    <th style="text-align:center">C2</th>
+    <th style="text-align:center">F2</th>
+    <th style="text-align:center">C3</th>
+    <th style="text-align:center">F3</th>
+  </tr>
+</thead>
+<tbody>
+	<% @enrolls.each do |enroll| %>
+	  <tr>
+	    <td><%= enroll.student.nombre + " " + enroll.student.appat + " " + enroll.student.apmat %></td>
+	    <td><%= enroll.c1  %></td>
+		<td><%= enroll.f1  %></td>
+		<td><%= enroll.c2  %></td>
+		<td><%= enroll.f2  %></td>
+		<td><%= enroll.c3  %></td>
+		<td><%= enroll.f3  %></td>
+	  </tr>
+	<% end %>
+</tbody>
+</table>

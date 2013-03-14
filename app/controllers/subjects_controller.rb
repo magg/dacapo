@@ -227,5 +227,43 @@ class SubjectsController < ApplicationController
          end
       end
     
+    
+      def calificaciones
+        @enrollments = Enrollment.all
+    
+        respond_to do |format|
+          format.html # periods.html.erb
+        end
+      end
+    
+    
+      def califas
+        period = params[:period][:id]
+        subject = params[:subject][:id]
+        student = params[:student][:id]
+        group = params[:group][:id]
+        
+        enroll = Enrollment.where("period_id = ? AND subject_id = ? AND student_id = ? AND group_id = ?", period, subject, student, group)
+        
+
+        if enroll.update_all(:c1 => params[:c1] ,:c2 => params[:c2], :c3 => params[:c3],
+              :f1 => params[:f1] ,:f2 => params[:f2], :f3 => params[:f3], :promedio => params[:promedio],
+                :tot_faltas => params[:tot_faltas], :estatus =>  params[:estatus], :calif_final =>  params[:calif_final])
+                @enrolls = Enrollment.where("period_id = ? AND subject_id = ? AND group_id = ?", period, subject, group)
+                render :partial => 'califas', :object => @enrolls, :content_type => 'text/html' 
+        else
+        end
+      end
+      
+      def grades
+        period = params[:period]
+        subject = params[:subject]
+        group = params[:group]
+                
+        @enrolls = Enrollment.where("period_id = ? AND subject_id = ? AND group_id = ?", period, subject, group)
+        render :partial => 'califas', :object => @enrolls, :content_type => 'text/html' 
+      
+      end
+      
   
 end

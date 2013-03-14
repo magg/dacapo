@@ -1,0 +1,121 @@
+<script type='text/javascript'>
+
+function IsNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+var foo = function(){
+	var c1 = document.getElementById("c1").value; 
+	var c2 = document.getElementById("c2").value; 
+	var c3 = document.getElementById("c3").value; 
+	var sum = 0;
+	
+	if( !IsNumber(c1) )
+		c1 = 0;
+	else
+		c1 = parseInt(c1);
+	if( !IsNumber(c2) )
+		c2 = 0;
+	else
+		c2 = parseInt(c2);	
+	if( !IsNumber(c3) )
+		c3 = 0;	
+	else
+		c3 = parseInt(c3);		
+	
+	sum = (c1+c2+c3)/3;	
+	document.getElementById("promedio").value = sum.toFixed(0);
+	
+};
+
+var bar = function(){
+	var f1 = document.getElementById("f1").value; 
+	var f2 = document.getElementById("f2").value; 
+	var f3 = document.getElementById("f3").value; 
+	var sum = 0;
+	
+	if( !IsNumber(f1) )
+		f1 = 0;
+	else
+		f1 = parseInt(f1);
+		
+	if( !IsNumber(f2) )
+		f2 = 0;
+	else
+		f2 = parseInt(f2);
+			
+	if( !IsNumber(f3) )
+		f3 = 0;	
+	else
+		f3 = parseInt(f3);		
+	
+	sum = (f1+f2+f3);	
+	document.getElementById("tot_faltas").value = sum;
+	
+};
+
+
+</script>
+<%= form_tag({:action => 'califas'}, :id => 'form-ajax-2', :remote => true, :'data-update-target' => 'update-container' ) do %>
+
+<p id="notice-update"></p>
+
+<div class="field">
+    <%= label_tag :periodo %><br />
+	<%= select("period", "id", @enrollments.collect {|p| [ p.period.descripcion, p.period.id ] }, {:include_blank => true})%>
+</div>
+
+<div class="field">
+    <%= label_tag :materia %><br />
+	<%= select("subject", "id", @enrollments.collect {|p| [ p.subject.descripcion, p.subject.id ] }, {:include_blank => true} )%>
+</div>
+
+<div class="field">
+    <%= label_tag :grupo %><br />
+	<%= select("group", "id", @enrollments.collect {|p| [ p.group.descripcion, p.group.id ] }, {:include_blank => true}, {:onchange => "update_grades(this.value, document.getElementById('period_id').value,document.getElementById('subject_id').value )"} )%>
+</div>
+
+
+<div id="update-container">
+
+</div>
+
+<div class="field">
+    <%= label_tag :alumno %><br />
+	<%= select("student", "id", @enrollments.collect {|p| [ p.student.nombre + " " + p.student.appat + " " + p.student.apmat, p.student.id ] }, {:include_blank => true} )%>
+</div>
+
+<table>
+	<thead>
+		<tr>
+			Alumno seleccionado:
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td>Calif. 1</td><td><%= text_field_tag 'c1','', :size => 3, :maxlength => 3, :onchange => 'foo()' %></td>
+			<td>Calif. 2</td> <td><%= text_field_tag 'c2','', :size => 3, :maxlength => 3,  :onchange => 'foo()'%></td>
+			<td>Calif. 3</td><td><%= text_field_tag 'c3','', :size => 3 , :maxlength => 3, :onchange => 'foo()'%></td>
+			<td>Promedio</td><td><%= text_field_tag 'promedio','', :size => 3 , :maxlength => 3, :readonly => true%></td>
+			<td>Calif. Final</td><td><%= text_field_tag 'calif_final','', :size => 3 , :maxlength => 3%></td>
+		</tr>
+		<tr>
+			<td>Faltas 1</td><td><%= text_field_tag 'f1','', :size => 3, :maxlength => 3, :onchange => 'bar()' %></td>
+			<td>Faltas 2</td> <td><%= text_field_tag 'f2','', :size => 3, :maxlength => 3, :onchange => 'bar()' %></td>
+			<td>Faltas 3</td><td><%= text_field_tag 'f3','', :size => 3 , :maxlength => 3, :onchange => 'bar()'%></td>
+			<td>Total faltas</td><td><%= text_field_tag 'tot_faltas','', :size => 3 , :maxlength => 3, :readonly => true%></td>
+			<td>Estatus</td><td><%=select_tag "estatus", options_for_select(0..4, 0) %></td>
+		</tr>
+	</tbody>
+	
+</table>
+	
+
+<br />
+<%= link_to 'Back', subjects_path %>
+<br />
+
+ <%= submit_tag 'Submit', :disable_with => 'Please wait...', :class => 'submit' %>
+
+<% end -%>
