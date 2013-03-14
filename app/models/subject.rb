@@ -29,4 +29,6 @@ class Subject < ActiveRecord::Base
   validates :clave, :presence => true, :uniqueness => true
   
   attr_accessible :clave, :descripcion, :matreq, :estatus, :creditos, :taller
+
+  
 end

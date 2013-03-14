@@ -179,13 +179,15 @@ class SubjectsController < ApplicationController
     
      def preview
     # ... do something meaningful here ...
-    @period = Period.find(params[:period])
+    @period = Period.joins(:memberships).where("memberships.period_id = ?",params[:period]).first
     @student = Student.find(params[:student])
     major = Major.find(@student.major_id)
     subject_ids = major.curriculums.select("subject_id").map(&:subject_id)
-    @subjects = @period.subjects.find(subject_ids)
+    subs = @period.subjects.where(:id => subject_ids)
+    @memberships = Membership.joins(:subject).merge(subs)
     
-    render :partial => 'preview', :object => @subjects, :content_type => 'text/html'
+    
+    render :partial => 'preview', :object => @memberships, :content_type => 'text/html'
     end
     
     
@@ -201,11 +203,22 @@ class SubjectsController < ApplicationController
     end
     
        def inscribir
-        @subjects = Subject.find(params[:subjectchosen])
+         subs = Array.new
+         grps = Array.new
+         params[:subjectchosen].each do |arr|
+          uno, dos = arr.split("!x!")
+          subs << uno
+          grps << dos
+         end
+         
+        @subjects = Subject.find(subs)
+        @groups = Group.find(grps)
         @period = Period.find(params[:period][:id])
         @student = Student.find(params[:student][:id])
+        i = 0
         @subjects.each do |sub|
-          @student.enrollments.build(:student_id => @student.id, :subject_id => sub.id, :period_id => @period.id)
+          @student.enrollments.build(:student_id => @student.id, :subject_id => sub.id, :period_id => @period.id, :group_id => grps[i])
+          i += 1
         end
         
          if @student.save

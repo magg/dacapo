@@ -18,7 +18,7 @@ $('#form-ajax').submit(function() {
 </script>
 <div class="field">
     <%= label_tag :materia %><br />
-	<%= select("subject", "id", @subjects.collect {|p| [ p.descripcion, p.id ] },{} , {:multiple => true, :size => 10} )%>
+	<%= select("subject", "id", @memberships.collect {|p| [ p.subject.descripcion + " Gpo:"+ p.group.clave, p.subject.id.to_s+"!x!"+p.group.id.to_s ] },{} , {:multiple => true, :size => 10} )%>
 	<%= link_to("Add", "#", html_options = {:id => "add-sel"}) %>
 </div>
 
