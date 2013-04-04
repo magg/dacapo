@@ -1,0 +1,25 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home",    '#' %></li>
+		  <li id="fat-menu" class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Escolar <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><%= link_to "Periodos", '/periods' %></li>
+				<li><%= link_to "Trimestres", '/tetramods' %></li>
+				<li><%= link_to "Turnos", '/shifts' %></li>
+				<li><%= link_to "Grupos", '/groups' %></li>
+				<li><%= link_to "Materias Mayores", '/majors' %></li>
+				<li><%= link_to "Areas Menores", '/minors' %></li>
+				<li><%= link_to "Materias", '/subjects' %></li>
+				<li><%= link_to "Inscripciones", '/payments' %></li>
+			</ul>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
