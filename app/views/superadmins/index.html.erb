@@ -1,25 +1,23 @@
-<h1>Listing superadmins</h1>
+<h1>Administradores</h1>
 
-<table>
+<table class="table table-striped table-bordered table-condensed" style="table-layout:fixed;word-wrap:break-word;">
   <tr>
-    <th>Nombre</th>
-    <th>Fecha nac</th>
-    <th></th>
+	<th style="text-align:center;">Nomina</th>
+    <th style="text-align:center;">Nombre</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @superadmins.each do |superadmin| %>
   <tr>
-    <td><%= superadmin.nombre %></td>
-    <td><%= superadmin.fecha_nac %></td>
-    <td><%= link_to 'Show', superadmin %></td>
-    <td><%= link_to 'Edit', edit_superadmin_path(superadmin) %></td>
-    <td><%= link_to 'Destroy', superadmin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td style="text-align:center;"><%= link_to superadmin.user.username, superadmin %></td>
+    <td style="text-align:center;"><%= superadmin.nombre + " " + superadmin.appat + " " + superadmin.apmat %></td>
+    <td width="75"><%= link_to '<i class="icon-edit icon-white"></i> Editar'.html_safe, edit_superadmin_path(superadmin) %></td>
+   <td width="87"><%= link_to '<i class="icon-trash icon-white"></i> Eliminar'.html_safe, superadmin, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Superadmin', new_superadmin_path %>
+<%= link_to '<i class="icon-pencil icon-white"></i> Agregar Administrador'.html_safe, new_superadmin_path, :class => 'btn btn-info' %>

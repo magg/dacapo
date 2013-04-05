@@ -1,10 +1,11 @@
-<%= form_for(@admin) do |f| %>
-  <% if @admin.errors.any? %>
+
+<%= form_for(@teacher) do |f| %>
+  <% if @teacher.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
 
       <ul>
-      <% @admin.errors.full_messages.each do |msg| %>
+      <% @teacher.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -15,8 +16,23 @@
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre %>
   </div>
+  <div class="field">
+    <%= f.label :appat %><br />
+    <%= f.text_field :appat %>
+  </div>
+  <div class="field">
+    <%= f.label :apmat %><br />
+    <%= f.text_field :apmat %>
+  </div>
 
 <%= f.fields_for :user do |ef| %>
+
+<div class="control-group">
+    <%= ef.label :email, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :email %>
+  </div>
+</div>
 <div class="control-group">
     <%= ef.label :username, :class=>"control-label" %>
    <div class="controls">
@@ -28,26 +44,21 @@
     <%= ef.label :password, :class=>"control-label" %>
    <div class="controls">
     <%= ef.password_field :password %>
-</div>
+  </div>
 </div>
 
 <div class="control-group">
     <%= ef.label :password_confirmation, :class=>"control-label" %>
    <div class="controls">
     <%= ef.password_field :password_confirmation %>
-</div>
+  </div>
 </div>
 
-<div class="control-group">
-    <%= ef.label :email, :class=>"control-label" %>
-   <div class="controls">
-    <%= ef.text_field :email %>
-</div>
-</div>
-<%= ef.hidden_field :rol , :value =>"Admin"  %>
-</div>
 <%- end %>
-
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
   <div class="field">
     <%= f.label :fecha_nac %><br />
     <%= f.date_select :fecha_nac, :start_year => 1950 %>

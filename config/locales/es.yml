@@ -149,6 +149,7 @@ es:
         not_a_number: "no es un número"
         too_short: "es muy corto"
         invalid: "inválido"
+        taken: "ya fue tomada"
   errors:
     template:
       body:        "Hay problemas con los siguientes campos:"
