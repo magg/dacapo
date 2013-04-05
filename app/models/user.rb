@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_one :student, :dependent => :destroy
-  #validates :username, :presence => true, :uniqueness => true
+  validates :username, :presence => true, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true
   has_secure_password
   attr_accessible :password, :password_confirmation, :rol, :username, :email

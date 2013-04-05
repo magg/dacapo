@@ -26,10 +26,14 @@ class Student < ActiveRecord::Base
   
   attr_accessible :apmat, :appat, :comentario, :direccion, :estatus, :fecha_nac, :instrumento, 
   :nombre, :rfc_fis, :tel_fis, :telefono1, :telefono2, :telefono3, :tipo_clase, :tipo_pago, 
-  :user_attributes, :payment_id, :major_id, :minor_id
+  :user_attributes, :payment_id, :major_id, :minor_id, :email2, :avatar, :fec_in, :dir_fis, :nom_fis,
+  :padret, :postit, :fecha_pago
 
   validates :nombre,:presence => true
   validates_associated :user
+  
+  mount_uploader :avatar, AvatarUploader
+  
   accepts_nested_attributes_for :user, :reject_if => lambda { |a| a[:content].blank? }
   
 end
