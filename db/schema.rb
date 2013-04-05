@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314045423) do
+ActiveRecord::Schema.define(:version => 20130404232250) do
 
   create_table "admins", :force => true do |t|
     t.string   "nombre"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20130314045423) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "appat"
+    t.string   "apmat"
+    t.string   "direccion"
+    t.date     "fec_in"
+    t.date     "telefono1"
+    t.date     "telefono2"
+    t.date     "telefono3"
+    t.integer  "estatus"
   end
 
   create_table "curriculums", :force => true do |t|
@@ -180,23 +188,30 @@ ActiveRecord::Schema.define(:version => 20130314045423) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "appat"
+    t.string   "apmat"
+    t.string   "direccion"
+    t.date     "fec_in"
+    t.date     "telefono1"
+    t.date     "telefono2"
+    t.date     "telefono3"
+    t.integer  "estatus"
   end
 
   create_table "teachers", :force => true do |t|
     t.string   "apmat"
     t.string   "appat"
-    t.string   "comentario"
     t.string   "direccion"
     t.date     "fecha_nac"
     t.string   "nombre"
-    t.string   "rfc_fis"
-    t.string   "tel_fis"
     t.string   "telefono1"
     t.string   "telefono2"
     t.string   "telefono3"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.date     "fec_in"
+    t.integer  "estatus"
   end
 
   create_table "tetramods", :force => true do |t|

@@ -45,6 +45,29 @@
     <%= f.label :fecha_nac %><br />
     <%= f.date_select :fecha_nac, :start_year => 1950 %>
   </div>
+  <div class="field">
+    <%= f.label :fec_in %><br />
+    <%= f.date_select :fec_in, :start_year => 1950 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono1 %><br />
+    <%= f.text_field :telefono1 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono2 %><br />
+    <%= f.text_field :telefono2 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono3 %><br />
+    <%= f.text_field :telefono3 %>
+  </div>
+ <div class="field">
+    <%= f.label :estatus %><br />
+	<select id="estatus" name="estatus">
+	  <option value="0">BAJA</option>
+	  <option value="1">ACTIVO</option>
+	</select>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

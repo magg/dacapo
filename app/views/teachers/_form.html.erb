@@ -31,6 +31,11 @@
 <%= f.fields_for :user do |ef| %>
 
 <div class="control-group">
+	<div class="control-group">
+	    <%= ef.label :username, :class=>"control-label" %>
+	   <div class="controls">
+	    <%= ef.text_field :username %>
+	  </div>
     <%= ef.label :email, :class=>"control-label" %>
    <div class="controls">
     <%= ef.text_field :email %>
@@ -40,12 +45,6 @@
 <%= ef.hidden_field :password_confirmation, :value => string %>
 </div>
 <%- end %>
-
-
-  <div class="field">
-    <%= f.label :comentario %><br />
-    <%= f.text_field :comentario %>
-  </div>
   <div class="field">
     <%= f.label :direccion %><br />
     <%= f.text_field :direccion %>
@@ -55,12 +54,8 @@
     <%= f.date_select :fecha_nac, :start_year => 1950 %>
   </div>
   <div class="field">
-    <%= f.label :rfc_fis %><br />
-    <%= f.text_field :rfc_fis %>
-  </div>
-  <div class="field">
-    <%= f.label :tel_fis %><br />
-    <%= f.text_field :tel_fis %>
+    <%= f.label :fec_in %><br />
+    <%= f.date_select :fec_in, :start_year => 1950 %>
   </div>
   <div class="field">
     <%= f.label :telefono1 %><br />
@@ -73,6 +68,13 @@
   <div class="field">
     <%= f.label :telefono3 %><br />
     <%= f.text_field :telefono3 %>
+  </div>
+ <div class="field">
+    <%= f.label :estatus %><br />
+	<select id="estatus" name="estatus">
+	  <option value="0">BAJA</option>
+	  <option value="1">ACTIVO</option>
+	</select>
   </div>
   <div class="actions">
     <%= f.submit %>

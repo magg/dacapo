@@ -3,7 +3,7 @@ class Teacher < ActiveRecord::Base
   
   
   
-  attr_accessible :apmat, :appat, :comentario, :direccion, :fecha_nac, :nombre, :rfc_fis, :tel_fis, 
+  attr_accessible :apmat, :appat, :direccion, :fecha_nac, :nombre, :fec_in,:estatus, 
   :telefono1, :telefono2, :telefono3, :user_id, :user_attributes
   
   
