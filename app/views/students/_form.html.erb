@@ -30,7 +30,13 @@
     <%= f.text_field :apmat %>
   </div>
 <%= f.fields_for :user do |ef| %>
- 
+
+<div class="control-group">
+    <%= ef.label :Matricula, :class=>"control-label" %>
+   <div class="controls">
+    <%= ef.text_field :username %>
+  </div> 
+
 <div class="control-group">
     <%= ef.label :email, :class=>"control-label" %>
    <div class="controls">
@@ -62,13 +68,13 @@
     <%= f.label :fecha_nac %><br />
     <%= f.date_select :fecha_nac, :start_year => 1950 %>
   </div>
-  <div class="field">
+ <div class="field">
     <%= f.label :estatus %><br />
-    <%= f.number_field :estatus %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_id %><br />
-    <%= select("student", "payment_id", Payment.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
+	<select id="estatus" name="estatus">
+	  <option value="1">ACTIVO</option>
+	  <option value="0">BAJA</option>
+	  <option value="0">BLOQUEADO</option>
+	</select>
   </div>
   <div class="field">
     <%= f.label :major_id %><br />
@@ -79,16 +85,12 @@
     <%= select("student", "minor_id", Minor.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
   </div>
   <div class="field">
-    <%= f.label :tipo_clase %><br />
+    <%= f.label :tipo_de_pago %><br />
+    <%= select("student", "payment_id", Payment.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_clase %><br />
     <%= f.number_field :tipo_clase %>
-  </div>
-  <div class="field">
-    <%= f.label :rfc_fis %><br />
-    <%= f.text_field :rfc_fis %>
-  </div>
-  <div class="field">
-    <%= f.label :tel_fis %><br />
-    <%= f.text_field :tel_fis %>
   </div>
   <div class="field">
     <%= f.label :instrumento %><br />
@@ -97,6 +99,14 @@
   <div class="field">
     <%= f.label :comentario %><br />
     <%= f.text_field :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :rfc_fis %><br />
+    <%= f.text_field :rfc_fis %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_fis %><br />
+    <%= f.text_field :tel_fis %>
   </div>
   <div class="actions">
     <%= f.submit %>

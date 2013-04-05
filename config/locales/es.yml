@@ -82,6 +82,10 @@ es:
           appat: "Apellido paterno"
           apmat: "Apellido materno"
           nombre: "Nombre"
+          telefono1: "Tel. Casa"
+          telefono2: "Tel. Celular"
+          telefono3: "Tel. Trabajo"
+          fecha_nac: "Fec. Nacim."
       teacher:
           telefono1: "Tel. Casa"
           telefono2: "Tel. Celular"

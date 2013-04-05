@@ -47,4 +47,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'therubyracer'
 gem 'execjs'
 
+# para pagination
 gem "kaminari"
+
+# para subir fotos
+gem 'carrierwave'
