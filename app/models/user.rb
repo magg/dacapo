@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   attr_accessible :password, :password_confirmation, :rol, :username, :email
   validates_presence_of :password, :on => :create
   
-  #before_create { generate_token(:auth_token) }
+  before_create { generate_token(:auth_token) }
   
   def generate_token(column)
     begin
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
      generate_token(:password_reset_token)
      self.password_reset_sent_at = Time.zone.now
      save!
-     #UserMailer.password_reset(self).deliver
+     UserMailer.password_reset(self).deliver
    end
 
 end

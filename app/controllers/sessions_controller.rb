@@ -7,28 +7,28 @@ class SessionsController < ApplicationController
 
   def create
     if user = User.authenticate(params[:username], params[:password])
-      if user.tipo == "Admin"
+      if user.rol == "Admin"
           if params[:remember_me]
            cookies.permanent[:auth_token] = user.auth_token
          else
            cookies[:auth_token] = user.auth_token  
          end  
-         redirect_to admin_stories_path
-       elsif user.tipo == "Student"
+         #redirect_to admin_stories_path
+       elsif user.rol == "Superadmin"
          #session[:user_id] = user.id
          if params[:remember_me]
            cookies.permanent[:auth_token] = user.auth_token
          else
            cookies[:auth_token] = user.auth_token  
          end         
-         redirect_to alumno_stories_path
-       elsif user.tipo == "Client"
+         #redirect_to alumno_stories_path
+       elsif user.rol == "Teacher"
          if params[:remember_me]
            cookies.permanent[:auth_token] = user.auth_token
          else
            cookies[:auth_token] = user.auth_token  
          end  
-         redirect_to cliente_stories_path
+         #redirect_to cliente_stories_path
       end
        else
          redirect_to login_url, :alert => "Usuario y/o contraseña invalidos"
