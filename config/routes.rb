@@ -42,6 +42,7 @@ scope '(:locale)' do
     resources :tetramods
     resources :superadmins
     resources :teachers
+    resources :costs
 end
 
   # The priority is based upon order of creation:

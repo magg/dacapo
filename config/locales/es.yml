@@ -77,6 +77,7 @@ es:
       subject:  "materia"
       minor:    "Área menor"
       teacher: "maestro"
+      cost: "costo"
     attributes:
       student:
           appat: "Apellido paterno"
@@ -138,6 +139,8 @@ es:
          descripcion: "Nombre"
          matreq: "Mat. Requisito"
          creditos: "Créditos"
+      cost:
+         descripcion: "Concepto"
          
 #END:errors
 #END:model

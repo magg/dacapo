@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descripcion: MyString
+  tipo: 1
+  monto: 9.99
+  obligatorio: 1
+  seguridad: 1
+  modificable: 1
+
+two:
+  descripcion: MyString
+  tipo: 1
+  monto: 9.99
+  obligatorio: 1
+  seguridad: 1
+  modificable: 1

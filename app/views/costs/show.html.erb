@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @cost.descripcion %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @cost.tipo %>
+</p>
+
+<p>
+  <b>Monto:</b>
+  <%= @cost.monto %>
+</p>
+
+<p>
+  <b>Obligatorio:</b>
+  <%= @cost.obligatorio %>
+</p>
+
+<p>
+  <b>Seguridad:</b>
+  <%= @cost.seguridad %>
+</p>
+
+<p>
+  <b>Modificable:</b>
+  <%= @cost.modificable %>
+</p>
+
+
+<%= link_to 'Edit', edit_cost_path(@cost) %> |
+<%= link_to 'Back', costs_path %>
