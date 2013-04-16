@@ -60,3 +60,13 @@ function update_grades(grp_id,per_id, sub_id) {
 	   }
     });
 }
+function unhide(val){
+	if (val === "2"){
+		var major = document.getElementById("major-f");
+		var minor = document.getElementById("minor-f");
+		major.setAttribute("aria-hidden", "false");
+		minor.setAttribute("aria-hidden", "false");
+		$('#major-f').removeClass('hide');
+		$('#minor-f').removeClass('hide');		
+	}
+}

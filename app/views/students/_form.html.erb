@@ -3,7 +3,7 @@
 %>
 
 
-<%= form_for(@student) do |f| %>
+<%= form_for @student, :html => {:multipart => true}  do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -29,6 +29,11 @@
     <%= f.label :apmat %><br />
     <%= f.text_field :apmat %>
   </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar, :class=>"btn btn-file", :accept => 'image/png,image/gif,image/jpeg' %>
+  </div>
 <%= f.fields_for :user do |ef| %>
 
 <div class="control-group">
@@ -41,12 +46,15 @@
     <%= ef.label :email, :class=>"control-label" %>
    <div class="controls">
     <%= ef.text_field :email %>
-  </div>
 <%= ef.hidden_field :rol , :value =>"Student"  %>
 <%= ef.hidden_field :password, :value => string %>
 <%= ef.hidden_field :password_confirmation, :value => string %>
-</div>
 <%- end %>
+<%= f.text_field :email2 %>
+
+</div>
+
+</div>
 
   <div class="field">
     <%= f.label :direccion %><br />
@@ -77,20 +85,25 @@
 	</select>
   </div>
   <div class="field">
-    <%= f.label :major_id %><br />
-    <%= select("student", "major_id", Major.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
-  </div>
-  <div class="field">
-    <%= f.label :minor_id %><br />
-    <%= select("student", "minor_id", Minor.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
-  </div>
-  <div class="field">
     <%= f.label :tipo_de_pago %><br />
     <%= select("student", "payment_id", Payment.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
   </div>
   <div class="field">
     <%= f.label :tipo_de_clase %><br />
-    <%= f.number_field :tipo_clase %>
+	<select id="tipo_clase" name="tipo_clase" onchange="unhide(this.options[this.selectedIndex].value)">
+	  <option value="0">CLASE</option>
+	  <option value="1">DIPLOMADO</option>
+	  <option value="2">CARRERA</option>
+	</select>
+
+  </div>
+  <div class="field hide" aria-hidden="true" id="major-f">
+    <%= f.label :carrera %><br />
+    <%= select("student", "major_id", Major.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
+  </div>
+  <div class="field hide" aria-hidden="true" id="minor-f">
+    <%= f.label :area_menor%><br />
+    <%= select("student", "minor_id", Minor.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
   </div>
   <div class="field">
     <%= f.label :instrumento %><br />
@@ -98,11 +111,31 @@
   </div>
   <div class="field">
     <%= f.label :comentario %><br />
-    <%= f.text_field :comentario %>
+    <%= f.text_area :comentario, :rows => 5, :cols => 25 %>
+  </div>
+  <div class="field">
+    <%= f.label :postit %><br />
+    <%= f.text_area :postit, :rows => 5, :cols => 25 %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_pago %><br />
+    <%= f.text_field :fecha_pago %>
+  </div>
+  <div class="field">
+    <%= f.label :padret %><br />
+    <%= f.text_field :padret, :class =>"input-xxlarge" %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_fis %><br />
+    <%= f.text_field :nom_fis %>
   </div>
   <div class="field">
     <%= f.label :rfc_fis %><br />
     <%= f.text_field :rfc_fis %>
+  </div>
+  <div class="field">
+    <%= f.label :dir_fis %><br />
+    <%= f.text_field :dir_fis %>
   </div>
   <div class="field">
     <%= f.label :tel_fis %><br />

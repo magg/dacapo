@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Foto:</b>
+
+
+<%= image_tag @student.avatar_url(:thumb).to_s %>
+
+</p>
+
+
+<p>
   <b>Nombre:</b>
   <%= @student.nombre %>
 </p>
