@@ -5,7 +5,9 @@ Dacapo::Application.routes.draw do
      post 'login' => :create
      delete 'logout' => :destroy
     end
-
+    
+    root
+    
   resources :password_resets
 
 scope '(:locale)' do
@@ -94,7 +96,7 @@ end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'login'
 
   # See how all your routes lay out with "rake routes"
 
