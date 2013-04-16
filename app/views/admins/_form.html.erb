@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="control-group">
     <%= f.label :nombre %><br />
+   <div class="controls">
     <%= f.text_field :nombre %>
   </div>
+</div>
 
 <%= f.fields_for :user do |ef| %>
 <div class="control-group">
@@ -45,37 +47,60 @@
 </div>
 </div>
 <%= ef.hidden_field :rol , :value =>"Admin"  %>
-</div>
 <%- end %>
 
-  <div class="field">
+<div class="control-group">
     <%= f.label :fecha_nac %><br />
+   <div class="controls">
+
     <%= f.date_select :fecha_nac, :start_year => 1950 %>
   </div>
-  <div class="field">
+</div>
+
+<div class="control-group">
     <%= f.label :fec_in %><br />
+   <div class="controls">
+
     <%= f.date_select :fec_in, :start_year => 1950 %>
   </div>
-  <div class="field">
+</div>
+
+<div class="control-group">
     <%= f.label :telefono1 %><br />
+   <div class="controls">
+
     <%= f.text_field :telefono1 %>
   </div>
-  <div class="field">
+</div>
+
+<div class="control-group">
     <%= f.label :telefono2 %><br />
+   <div class="controls">
+
     <%= f.text_field :telefono2 %>
   </div>
-  <div class="field">
+</div>
+
+<div class="control-group">
     <%= f.label :telefono3 %><br />
+   <div class="controls">
+
     <%= f.text_field :telefono3 %>
   </div>
- <div class="field">
+</div>
+
+<div class="control-group">
     <%= f.label :estatus %><br />
+   <div class="controls">
+
 	<select id="estatus" name="estatus">
 	  <option value="1">ACTIVO</option>
 	  <option value="0">BAJA</option>
 	  <option value="0">BLOQUEADO</option>
 	</select>
   </div>
+</div>
+
   <div class="actions">
     <%= f.submit 'Guardar', :class => 'btn btn-primary' %>
   </div>
