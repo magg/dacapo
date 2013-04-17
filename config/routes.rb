@@ -5,9 +5,7 @@ Dacapo::Application.routes.draw do
      post 'login' => :create
      delete 'logout' => :destroy
     end
-    
-    root
-    
+        
   resources :password_resets
 
 scope '(:locale)' do
