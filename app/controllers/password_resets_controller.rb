@@ -1,6 +1,6 @@
 class PasswordResetsController < ApplicationController
   layout "login"
-  skip_before_filter :authorize
+  #skip_before_filter :authorize
   
   def new
   end
