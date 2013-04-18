@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.order("created_at DESC").page(params[:page]).per(1)
 
     respond_to do |format|
       format.html # index.html.erb
