@@ -9,10 +9,11 @@
 es:
   views:
       pagination:
-                previous: "&lt; Siguiente"
-                next: "Anterior &gt;"
-                truncate: "&hellip;&rdquo;
-                last: "Último"
+            previous: "&lt; Anterior"
+            next: "Siguiente &gt;"
+            truncate: "&hellip;&rdquo;"
+            last: "Último"
+            first: "Primero"
   date:
     abbr_day_names:
     - dom
