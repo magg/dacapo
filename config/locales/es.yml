@@ -7,7 +7,13 @@
 #START:model
 #START:flash
 es:
-
+  views:
+      pagination:
+            previous: "&lt; Anterior"
+            next: "Siguiente &gt;"
+            truncate: "&hellip;&rdquo;"
+            last: "Último"
+            first: "Primero"
   date:
     abbr_day_names:
     - dom
