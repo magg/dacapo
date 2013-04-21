@@ -11,6 +11,8 @@ end
 group :production do
 	gem 'pg'
 	gem 'unicorn'
+	gem 'fog'
+  gem 'aws-sdk'
 end
 
 
@@ -54,4 +56,3 @@ gem "kaminari"
 # para subir fotos
 gem 'carrierwave'
 gem "rmagick"
-
