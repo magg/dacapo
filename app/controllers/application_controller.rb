@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  #before_filter :authorize
+  before_filter :authorize
   before_filter :set_i18n_locale_from_params
   protect_from_forgery
   
@@ -25,4 +25,11 @@ class ApplicationController < ActionController::Base
           redirect_to login_url, :notice => "Please log in"
         end
       end
+      
+    private
+      def current_user
+        @current_user ||= User.find_by_auth_token( cookies[:auth_token]) if cookies[:auth_token]
+      end
+      helper_method :current_user  
+      
 end

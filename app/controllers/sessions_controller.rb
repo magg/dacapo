@@ -1,7 +1,7 @@
 # encoding: utf-8
 class SessionsController < ApplicationController
   layout "login"
-  #skip_before_filter :authorize
+  skip_before_filter :authorize
   def new
   end
 
