@@ -25,6 +25,7 @@ class PaymentsController < ApplicationController
   # GET /payments/new.json
   def new
     @payment = Payment.new
+    1.times { @payment.pay_item.build }
 
     respond_to do |format|
       format.html # new.html.erb

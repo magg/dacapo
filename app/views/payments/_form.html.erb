@@ -11,10 +11,50 @@
     </div>
   <% end %>
 
+<div class="field">
+    <%= label_tag :alumno %><br />
+	<%= select("payment", "user_id", Student.all.collect {|p| [ p.nombre + " " + p.appat + " " + p.apmat, p.user_id ] },
+ 	{:include_blank => true} )%>
+</div>
+
   <div class="field">
     <%= f.label :descripcion %><br />
     <%= f.text_field :descripcion %>
   </div>
+
+  <div class="field">
+    <%= f.label :tipo_de_pago %><br />
+    <%= select("payment", "payment_type_id", PaymentType.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
+  </div>
+
+
+<%= f.fields_for :pay_item do |builder| %>
+
+<table>
+<thead>
+	<tr>
+	<th>Concepto</th>	
+	<th>Importe</th>	
+	<th>Cant</th>
+	<th>Total</th>	
+	</tr>
+</thead>
+<tbody>
+		
+
+    <%= render 'pay_item_fields', :f => builder %>
+
+</tbody>
+</table>
+  <p><%= link_to_add_fields "Agregar", f, :pay_item %></p>
+<%- end %>
+
+<div class="field">
+  <%= f.label :total_a_pagar %><br />
+  <%= f.text_field :total, :value => 0, :readonly => true %>
+</div>
+
+
   <div class="actions">
     <%= f.submit 'Guardar', :class => 'btn btn-primary' %>
   </div>

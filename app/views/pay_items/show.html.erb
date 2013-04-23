@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Payment:</b>
+  <%= @pay_item.payment_id %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @pay_item.cost_id %>
+</p>
+
+<p>
+  <b>Importe:</b>
+  <%= @pay_item.importe %>
+</p>
+
+<p>
+  <b>Cant:</b>
+  <%= @pay_item.cant %>
+</p>
+
+<p>
+  <b>Consec:</b>
+  <%= @pay_item.consec %>
+</p>
+
+
+<%= link_to 'Edit', edit_pay_item_path(@pay_item) %> |
+<%= link_to 'Back', pay_items_path %>

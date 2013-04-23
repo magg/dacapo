@@ -1,5 +1,7 @@
 Dacapo::Application.routes.draw do
 
+  #resources :pay_items
+  
    controller :sessions do
      get 'login' => :new
      post 'login' => :create
@@ -12,6 +14,7 @@ scope '(:locale)' do
     resources :students
     resources :periods
     resources :payments
+    resources :payment_types
     resources :users
     resources :subjects do
       collection do

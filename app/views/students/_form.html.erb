@@ -41,6 +41,7 @@
    <div class="controls">
     <%= ef.text_field :username %>
   </div> 
+</div> 
 
 <div class="control-group">
     <%= ef.label :email, :class=>"control-label" %>
@@ -86,7 +87,7 @@
   </div>
   <div class="field">
     <%= f.label :tipo_de_pago %><br />
-    <%= select("student", "payment_id", Payment.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
+    <%= select("student", "payment_id", PaymentType.all.collect {|p| [ p.descripcion, p.id ] }, { :include_blank => true })%>
   </div>
   <div class="field">
     <%= f.label :tipo_de_clase %><br />

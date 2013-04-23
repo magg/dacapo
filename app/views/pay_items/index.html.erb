@@ -1,0 +1,31 @@
+<h1>Listing pay_items</h1>
+
+<table>
+  <tr>
+    <th>Payment</th>
+    <th>Cost</th>
+    <th>Importe</th>
+    <th>Cant</th>
+    <th>Consec</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pay_items.each do |pay_item| %>
+  <tr>
+    <td><%= pay_item.payment_id %></td>
+    <td><%= pay_item.cost_id %></td>
+    <td><%= pay_item.importe %></td>
+    <td><%= pay_item.cant %></td>
+    <td><%= pay_item.consec %></td>
+    <td><%= link_to 'Show', pay_item %></td>
+    <td><%= link_to 'Edit', edit_pay_item_path(pay_item) %></td>
+    <td><%= link_to 'Destroy', pay_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pay item', new_pay_item_path %>

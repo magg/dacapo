@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
+  has_one :superadmin, :dependent => :destroy
+  has_one :admin, :dependent => :destroy
+  has_one :teacher, :dependent => :destroy
   has_one :student, :dependent => :destroy
+  
+  has_many :payments
+  
   validates :username, :presence => true, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true
   has_secure_password

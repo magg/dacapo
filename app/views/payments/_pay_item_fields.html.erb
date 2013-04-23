@@ -1,0 +1,21 @@
+<tr class="fields" style="display:table-row;">	
+	<td>	
+		<%= f.select "cost_id", Cost.all.collect {|p| [ p.descripcion, p.id ] } %>
+	</td>
+	<td>
+	    <%= f.text_field :importe,:class =>"input-small", :onchange => "calc_pay_imp(this)" %>
+	</td>
+	<td>
+	    <%= f.text_field :cant,:class =>"input-small", :onchange => "calc_pay_cant(this)" %>
+	</td>
+	<td>
+	    <%= f.text_field :total,:class =>"input-small total-count", :readonly=> true %>
+	</td>
+
+<td>
+
+  <%= f.hidden_field :_destroy %>
+  <%= link_to_function "Borrar", "remove_fields(this);remove_from_tot(this)" %>
+</td>
+
+</tr>

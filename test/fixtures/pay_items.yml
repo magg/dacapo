@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  payment_id: 1
+  cost_id: 1
+  importe: 9.99
+  cant: 1
+  consec: 1
+
+two:
+  payment_id: 1
+  cost_id: 1
+  importe: 9.99
+  cant: 1
+  consec: 1
