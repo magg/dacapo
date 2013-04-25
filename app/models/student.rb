@@ -34,6 +34,6 @@ class Student < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
   
-  accepts_nested_attributes_for :user, :reject_if => lambda { |a| a[:content].blank? }
+  accepts_nested_attributes_for :user
   
 end

@@ -6,5 +6,5 @@ class Admin < ActiveRecord::Base
   
   validates :nombre,  :presence => true
   validates_associated :user
-  accepts_nested_attributes_for :user, :reject_if => lambda { |a| a[:content].blank? }
+  accepts_nested_attributes_for :user
 end
