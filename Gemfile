@@ -55,4 +55,6 @@ gem "kaminari"
 
 # para subir fotos
 gem 'carrierwave'
-gem "rmagick"
+gem 'rmagick'
+
+gem 'prawn'
