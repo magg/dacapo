@@ -57,4 +57,5 @@ gem "kaminari"
 gem 'carrierwave'
 gem 'rmagick'
 
+# para PDF's
 gem 'prawn'
