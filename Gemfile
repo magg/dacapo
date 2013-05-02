@@ -59,3 +59,4 @@ gem 'rmagick'
 
 # para PDF's
 gem 'prawn'
+gem "prawnto_2", :require => "prawnto"
